@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Meet the Atlas Design Group team.">
+  <title>Our Team | Atlas Design Group</title>
+  <style>
+    :root { --navy:#172552; --cream:#f4f1ea; --teal:#15bebc; --ink:#14204a; --muted:#697088; --white:#fff; --max:1380px; }
+    * { box-sizing:border-box; } html { scroll-behavior:smooth; } body { margin:0; color:var(--ink); background:var(--cream); font-family:Arial, Helvetica, sans-serif; font-size:17px; } a { color:inherit; }
+    .skip-link { position:absolute; z-index:20; top:-4rem; left:1rem; padding:.75rem 1rem; color:#fff; background:var(--navy); } .skip-link:focus { top:1rem; }
+    .site-header { color:var(--navy); background:var(--cream); border-bottom:1px solid rgb(20 32 74 / 10%); }
+    .nav-shell { display:flex; align-items:center; justify-content:space-between; max-width:var(--max); min-height:5.4rem; margin:auto; padding:0 2rem; }
+    .logo { display:flex; align-items:center; gap:.65rem; color:inherit; font-size:.8rem; font-weight:700; letter-spacing:.03em; text-decoration:none; text-transform:uppercase; }
+    .logo-mark { display:grid; width:2rem; height:2rem; place-items:center; border:1px solid currentColor; border-radius:50%; font-size:.5rem; }
+    .nav-list { display:flex; align-items:center; gap:2rem; margin:0; padding:0; list-style:none; font-size:.75rem; font-weight:700; }
+    .nav-list a { color:inherit; text-decoration:none; } .nav-list a:hover, .nav-list a:focus-visible { color:var(--teal); }
+    .button { display:inline-flex; align-items:center; justify-content:center; min-height:2.8rem; padding:.8rem 1.5rem; border:1px solid var(--navy); border-radius:99px; color:#fff; background:var(--navy); font-size:.75rem; font-weight:700; letter-spacing:.02em; text-decoration:none; text-transform:uppercase; transition:transform .2s,background .2s; }
+    .button:hover,.button:focus-visible { background:var(--teal); border-color:var(--teal); outline:none; transform:translateY(-2px); }
+    .menu-toggle { display:none; border:0; color:var(--navy); background:transparent; font-size:1.5rem; cursor:pointer; }
+    .hero { padding:clamp(5rem,10vw,9rem) 2rem 4rem; color:#fff; background:var(--navy); } .hero-inner,.team,.cta-inner { width:min(var(--max),100%); margin:auto; }
+    .eyebrow { margin:0 0 .8rem; color:var(--teal); font-size:.75rem; font-weight:700; letter-spacing:.07em; text-transform:uppercase; }
+    h1,h2,h3,p { margin-top:0; } h1 { max-width:48rem; margin-bottom:1rem; font-size:clamp(3rem,6vw,6rem); line-height:.94; letter-spacing:-.06em; }
+    .hero p:last-child { max-width:40rem; margin-bottom:0; color:#e0e5f4; font-size:1.05rem; line-height:1.5; }
+    .team { padding:clamp(3rem,6vw,6.5rem) 2rem; } .intro { display:flex; align-items:end; justify-content:space-between; gap:2rem; margin-bottom:3rem; }
+    .intro h2 { max-width:33rem; margin:0; font-size:clamp(1.8rem,3.5vw,3.5rem); line-height:1; letter-spacing:-.05em; } .intro p { max-width:29rem; margin:0; color:var(--muted); font-size:.95rem; line-height:1.5; }
+    .team-groups { display:grid; gap:3.8rem; } .team-group { padding-top:1.1rem; border-top:2px solid var(--navy); } .team-group-header { display:flex; align-items:baseline; justify-content:space-between; gap:1rem; margin-bottom:1.3rem; } .team-group-header h3 { margin:0; font-size:1.2rem; letter-spacing:.06em; text-transform:uppercase; } .team-group-header span { color:var(--teal); font-size:.72rem; font-weight:700; letter-spacing:.07em; text-transform:uppercase; }
+    .team-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.2rem; } .member { overflow:hidden; border:3px solid var(--navy); background:#fff; } .member-image { display:block; width:100%; aspect-ratio:1 / 1.08; object-fit:cover; object-position:center top; filter:saturate(.88); transition:filter .25s,transform .25s; } .member:hover .member-image { filter:saturate(1); transform:scale(1.025); }
+    .member-copy { min-height:7.6rem; padding:1.2rem; } .member h3 { margin:0 0 .4rem; font-size:1.2rem; line-height:1.05; letter-spacing:-.025em; } .member p { margin:0; color:var(--muted); font-size:.8rem; font-weight:700; line-height:1.35; text-transform:uppercase; } .member p:empty::after { content:"Atlas Design Group"; color:var(--teal); }
+    .cta { padding:clamp(3rem,6vw,6rem) 2rem; color:#fff; background:var(--navy); } .cta-inner { display:flex; align-items:center; justify-content:space-between; gap:2rem; } .cta h2 { max-width:43rem; margin:0; font-size:clamp(1.8rem,3.6vw,3.7rem); line-height:1; letter-spacing:-.05em; }
+    footer { display:flex; justify-content:space-between; gap:1rem; padding:1.4rem 2rem; color:#fff; background:#0b1330; font-size:.7rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; }
+    @media (max-width:850px) { .nav-shell { min-height:4.5rem; padding:0 1.2rem; } .menu-toggle { display:block; } .nav-list { position:absolute; z-index:5; top:4.5rem; right:0; left:0; display:none; align-items:stretch; flex-direction:column; gap:0; padding:1rem 1.2rem 1.3rem; background:var(--cream); box-shadow:0 10px 20px rgb(20 32 74 / 12%); } .nav-list.is-open { display:flex; } .nav-list a { display:block; padding:.8rem 0; } .nav-list .button { justify-content:start; width:fit-content; margin-top:.5rem; padding:.7rem 1rem; } .team-grid { grid-template-columns:repeat(3,1fr); } }
+    @media (max-width:600px) { .hero,.team,.cta { padding-right:1.2rem; padding-left:1.2rem; } .intro,.cta-inner { align-items:start; flex-direction:column; } .team-grid { grid-template-columns:repeat(2,1fr); gap:.75rem; } .member-copy { min-height:8rem; padding:.9rem; } .member h3 { font-size:.95rem; } footer { align-items:start; flex-direction:column; } }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#team">Skip to team</a>
+  <header class="site-header"><div class="nav-shell">
+    <a class="logo" href="ADG_Website_Redesign.html#home" aria-label="Atlas Design Group home"><span class="logo-mark" aria-hidden="true">ADG</span><span>Atlas Design Group</span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">Menu</button>
+    <nav id="primary-navigation" class="nav-list" aria-label="Primary navigation"><a href="ADG_Website_Redesign.html#work">Work</a><a href="ADG_Website_Redesign.html#expertise">Expertise</a><a href="ADG_Website_Redesign.html#about">About</a><a href="#team" aria-current="page">Meet the team</a><a href="ADG_Website_Redesign.html#insights">Insights</a><a class="button" href="ADG_Website_Redesign.html#contact">Start a project</a></nav>
+  </div></header>
+  <main>
+    <section class="hero" aria-labelledby="team-page-title"><div class="hero-inner"><p class="eyebrow">Our firm</p><h1 id="team-page-title">The people behind the work.</h1><p>Atlas Design Group brings structural, civil, and construction expertise together with a shared commitment to the communities we serve.</p></div></section>
+    <section id="team" class="team" aria-labelledby="team-title"><div class="intro"><div><p class="eyebrow">The Atlas team</p><h2 id="team-title">Principal-level attention at every level.</h2></div><p>Meet the engineers, designers, and operations staff who bring practical creativity and technical rigor to every project.</p></div>
+      <div class="team-groups">
+      <section class="team-group" aria-labelledby="leadership-title"><div class="team-group-header"><h3 id="leadership-title">Leadership + Operations</h3><span>03 people</span></div><div class="team-grid">
+        <article class="member"><img class="member-image" src="adg-website-assets/team/christopher-padin-p-e-s-e.jpg" alt="Christopher Padin"><div class="member-copy"><h3>Christopher Padin, P.E., S.E.</h3><p>CEO &amp; Founding Principal</p></div></article>
+        <article class="member"><img class="member-image" src="adg-website-assets/team/robert-smedley-c-i-o.png" alt="Robert Smedley"><div class="member-copy"><h3>Robert Smedley, C.I.O.</h3><p>Chief Information Officer &amp; Office Manager</p></div></article>
+        <article class="member"><img class="member-image" src="adg-website-assets/team/jason-black.png" alt="Jason Black"><div class="member-copy"><h3>Jason Black</h3><p>BIM Manager</p></div></article>
+      </div></section>
+      <section class="team-group" aria-labelledby="management-title"><div class="team-group-header"><h3 id="management-title">Project Leadership</h3><span>04 people</span></div><div class="team-grid">
+        <article class="member"><img class="member-image" src="adg-website-assets/team/kevin-aguilar-p-e-s-e.jpg" alt="Kevin Aguilar"><div class="member-copy"><h3>Kevin Aguilar, P.E., S.E.</h3><p>Project Manager</p></div></article>
+        <article class="member"><img class="member-image" src="adg-website-assets/team/elliot-smith-p-e.png" alt="Elliot Smith"><div class="member-copy"><h3>Elliot Smith, P.E.</h3><p>Project Manager</p></div></article>
+        <article class="member"><img class="member-image" src="adg-website-assets/team/michael-miller-p-e-assoc-dbia.jpg" alt="Michael Miller"><div class="member-copy"><h3>Michael Miller, P.E., Assoc. DBIA</h3><p>Project Manager</p></div></article>
+        <article class="member"><img class="member-image" src="adg-website-assets/team/isaac-larson-p-e.jpg" alt="Isaac Larson"><div class="member-copy"><h3>Isaac Larson, P.E.</h3><p>Senior Project Engineer</p></div></article>
+      </div></section>
+      <section class="team-group" aria-labelledby="engineering-title"><div class="team-group-header"><h3 id="engineering-title">Engineering</h3><span>06 people</span></div><div class="team-grid">
+        <article class="member"><img class="member-image" src="adg-website-assets/team/hannah-luer-e-i-t.jpg" alt="Hannah Luer"><div class="member-copy"><h3>Hannah Luer, E.I.T.</h3><p>Project Engineer</p></div></article>
+        <article class="member"><img class="member-image" src="adg-website-assets/team/ryan-larson-e-i-t.jpeg" alt="Ryan Larson"><div class="member-copy"><h3>Ryan Larson, E.I.T.</h3><p></p></div></article>
+        <article class="member"><img class="member-image" src="adg-website-assets/team/edward-candra-e-i-t.jpg" alt="Edward Candra"><div class="member-copy"><h3>Edward Candra, E.I.T.</h3><p>Project Engineer</p></div></article>
+        <article class="member"><img class="member-image" src="adg-website-assets/team/poala-binuya-e-i-t.jpeg" alt="Poala Binuya"><div class="member-copy"><h3>Poala Binuya, E.I.T.</h3><p>Project Engineer</p></div></article>
+        <article class="member"><img class="member-image" src="adg-website-assets/team/anthony-hidajat-e-i-t.jpeg" alt="Anthony Hidajat"><div class="member-copy"><h3>Anthony Hidajat, E.I.T.</h3><p>Project Engineer</p></div></article>
+        <article class="member"><img class="member-image" src="adg-website-assets/team/sowmya-jagadeesh.jpg" alt="Sowmya Jagadeesh"><div class="member-copy"><h3>Sowmya Jagadeesh</h3><p>Intern Engineer</p></div></article>
+      </div></section>
+      <section class="team-group" aria-labelledby="design-title"><div class="team-group-header"><h3 id="design-title">BIM Design</h3><span>02 people</span></div><div class="team-grid">
+        <article class="member"><img class="member-image" src="adg-website-assets/team/tony-calvert.jpg" alt="Tony Calvert"><div class="member-copy"><h3>Tony Calvert</h3><p>BIM Designer</p></div></article>
+        <article class="member"><img class="member-image" src="adg-website-assets/team/jared-cohen.jpg" alt="Jared Cohen"><div class="member-copy"><h3>Jared Cohen</h3><p>BIM Designer</p></div></article>
+      </div></section>
+      </div>
+    </section>
+    <section class="cta"><div class="cta-inner"><div><p class="eyebrow">Let's build something that matters</p><h2>Bring us your next challenge.</h2></div><a class="button" href="ADG_Website_Redesign.html#contact">Start a project</a></div></section>
+  </main>
+  <footer><span>Atlas Design Group</span><span>Structural + Civil Engineering</span><span>Seattle, Washington · adg-inc.com</span></footer>
+  <script>
+    const nav = document.querySelector(".nav-list"), toggle = document.querySelector(".menu-toggle");
+    toggle.addEventListener("click", () => { const open = nav.classList.toggle("is-open"); toggle.setAttribute("aria-expanded", open); toggle.textContent = open ? "Close" : "Menu"; });
+    nav.querySelectorAll("a").forEach(link => link.addEventListener("click", () => { nav.classList.remove("is-open"); toggle.setAttribute("aria-expanded", "false"); toggle.textContent = "Menu"; }));
+  </script>
+</body>
+</html>

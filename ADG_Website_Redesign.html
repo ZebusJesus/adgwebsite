@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Atlas Design Group structural and civil engineering.">
+  <title>Atlas Design Group | Structural + Civil Engineering</title>
+  <style>
+    :root { --navy:#172552; --navy-dark:#0b1330; --cream:#f4f1ea; --teal:#15bebc; --ink:#14204a; --muted:#697088; --white:#fff; --line:#dfe1e7; --max:1380px; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:var(--cream); font-family:Arial, Helvetica, sans-serif; font-size:17px; }
+    button, input, textarea { font:inherit; }
+    a { color:inherit; }
+    .skip-link { position:absolute; z-index:20; top:-4rem; left:1rem; padding:.75rem 1rem; color:#fff; background:var(--navy); }
+    .skip-link:focus { top:1rem; }
+    .site-header { position:absolute; z-index:10; top:0; left:0; width:100%; color:#fff; }
+    .nav-shell { display:flex; align-items:center; justify-content:space-between; max-width:var(--max); min-height:5.4rem; margin:auto; padding:0 2rem; }
+    .logo { display:flex; align-items:center; gap:.65rem; color:inherit; font-size:.8rem; font-weight:700; letter-spacing:.03em; text-decoration:none; text-transform:uppercase; }
+    .logo-mark { display:grid; width:2rem; height:2rem; place-items:center; border:1px solid currentColor; border-radius:50%; font-size:.5rem; }
+    .nav-list { display:flex; align-items:center; gap:2rem; margin:0; padding:0; list-style:none; font-size:.75rem; font-weight:700; }
+    .nav-list a { color:inherit; text-decoration:none; }
+    .nav-list a:hover, .nav-list a:focus-visible { color:var(--teal); }
+    .button { display:inline-flex; align-items:center; justify-content:center; min-height:2.8rem; padding:.8rem 1.5rem; border:1px solid transparent; border-radius:99px; color:var(--navy); background:#fff; font-size:.75rem; font-weight:700; letter-spacing:.02em; text-decoration:none; text-transform:uppercase; cursor:pointer; transition:transform .2s, background .2s, color .2s; }
+    .button:hover, .button:focus-visible { color:#fff; background:var(--teal); outline:none; transform:translateY(-2px); }
+    .button--outline { color:#fff; border-color:rgb(255 255 255 / 70%); background:transparent; }
+    .button--dark { color:#fff; background:var(--navy); }
+    .menu-toggle { display:none; border:0; color:#fff; background:transparent; font-size:1.5rem; cursor:pointer; }
+    .hero { position:relative; display:grid; min-height:44rem; place-items:end start; color:#fff; background:linear-gradient(90deg, rgb(8 17 48 / 72%), rgb(8 17 48 / 23%)), url("adg-website-assets/hero-lake-city.png") center / cover; }
+    .hero-inner { width:min(var(--max), 100%); padding:10rem 2rem 6rem; margin:auto; }
+    .eyebrow { margin:0 0 .8rem; color:var(--teal); font-size:.75rem; font-weight:700; letter-spacing:.07em; text-transform:uppercase; }
+    h1, h2, h3, p { margin-top:0; }
+    h1 { max-width:43rem; margin-bottom:1.25rem; font-size:clamp(2.8rem, 5.3vw, 5.6rem); line-height:.98; letter-spacing:-.055em; }
+    .hero-copy { max-width:34rem; margin-bottom:1.8rem; font-size:1rem; line-height:1.5; }
+    .hero-caption { position:absolute; right:2rem; bottom:1.7rem; font-size:.7rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; }
+    .section { padding:clamp(4rem, 8vw, 8rem) 2rem; }
+    .section-inner { width:min(var(--max), 100%); margin:auto; }
+    .section-label { margin:0 0 .5rem; color:var(--teal); font-size:.65rem; font-weight:700; letter-spacing:.07em; text-transform:uppercase; }
+    .section-title { max-width:46rem; margin-bottom:1rem; font-size:clamp(2.1rem, 4vw, 4.25rem); line-height:1; letter-spacing:-.05em; }
+    .section-intro { max-width:41rem; color:var(--muted); font-size:1.05rem; line-height:1.55; }
+    .capability { display:grid; grid-template-columns:1.1fr .8fr; gap:5rem; align-items:end; }
+    .stats { display:grid; grid-template-columns:repeat(3, 1fr); gap:1.5rem; }
+    .stat-number { display:block; margin-bottom:.5rem; font-size:2.4rem; font-weight:700; letter-spacing:-.06em; }
+    .stat-label { color:var(--muted); font-size:.7rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; }
+    .service-cards { display:grid; grid-template-columns:repeat(3, 1fr); gap:1rem; margin-top:3rem; }
+    .service-card { padding:1.7rem; border:0; border-radius:2px; color:var(--ink); background:#fff; text-align:left; cursor:pointer; transition:transform .2s, box-shadow .2s; }
+    .service-card:hover, .service-card:focus-visible { box-shadow:0 12px 28px rgb(16 31 74 / 15%); outline:2px solid var(--teal); transform:translateY(-4px); }
+    .service-card.is-active { color:#fff; background:var(--navy); }
+    .service-card small { display:block; margin-bottom:.8rem; color:var(--teal); font-size:.72rem; font-weight:700; letter-spacing:.06em; }
+    .service-card h3 { margin-bottom:.7rem; font-size:1.25rem; }
+    .service-card p { margin:0; color:inherit; font-size:.95rem; line-height:1.5; opacity:.76; }
+    .service-detail { min-height:1.5rem; margin:1.2rem 0 0; color:var(--muted); font-size:.9rem; }
+    .collaboration { display:flex; align-items:end; justify-content:space-between; gap:2rem; padding-top:3.5rem; }
+    .collaboration h3 { max-width:32rem; margin:0; font-size:clamp(1.55rem, 2.6vw, 2.5rem); letter-spacing:-.04em; }
+    .work { background:#fff; }
+    .work-header { display:flex; align-items:end; justify-content:space-between; gap:2rem; }
+    .filters { display:flex; flex-wrap:wrap; gap:.4rem; margin:2.5rem 0 1.3rem; }
+    .filter { border:0; padding:.5rem .75rem; color:var(--ink); background:transparent; font-size:.72rem; font-weight:700; letter-spacing:.03em; text-transform:uppercase; cursor:pointer; }
+    .filter:hover, .filter:focus-visible, .filter.is-active { color:#fff; background:var(--navy); outline:none; }
+    .projects { display:grid; grid-template-columns:repeat(3, 1fr); gap:1.1rem; }
+    .project-card { position:relative; min-height:20rem; padding:1.4rem; overflow:hidden; border:0; color:#fff; background:var(--navy); text-align:left; cursor:pointer; }
+    .project-card::before { content:""; position:absolute; inset:0; background:linear-gradient(0deg, rgb(9 17 44 / 84%), rgb(9 17 44 / 0%) 65%); transition:background .2s; }
+    .project-card:hover::before, .project-card:focus-visible::before { background:linear-gradient(0deg, rgb(9 17 44 / 88%), rgb(9 17 44 / 22%) 75%); }
+    .project-card:focus-visible { outline:3px solid var(--teal); outline-offset:3px; }
+    .project-card[hidden] { display:none; }
+    .project-card > span { position:relative; display:block; }
+    .project-card__content { position:absolute; z-index:1; right:1.4rem; bottom:1.35rem; left:1.4rem; }
+    .project-card__type { margin-bottom:.35rem; font-size:.78rem; }
+    .project-card__title { margin:0; font-size:1.4rem; }
+    .project-card--hilltop { background:url("adg-website-assets/housing-hilltop.png") center / cover; }
+    .project-card--prisma { background:url("adg-website-assets/prisma-apartments.png") center / cover; }
+    .project-card--mercy { background:url("adg-website-assets/mercy-aviva.png") center / cover; }
+    .featured { display:grid; grid-template-columns:1.25fr .95fr; color:#fff; background:var(--navy); }
+    .featured-image { min-height:37rem; background:url("adg-website-assets/housing-hilltop.png") center / cover; }
+    .featured-copy { display:flex; flex-direction:column; align-items:start; justify-content:center; padding:clamp(2.5rem, 5vw, 5rem); }
+    .featured-copy .section-title { margin-bottom:.4rem; }
+    .featured-client { margin:0 0 2rem; font-size:.95rem; font-weight:700; }
+    .featured-description { max-width:28rem; margin-bottom:2.5rem; font-size:.95rem; line-height:1.5; }
+    .facts { display:grid; width:100%; grid-template-columns:1fr 1fr; gap:1.3rem 1rem; margin-bottom:2rem; }
+    .facts dt { margin-bottom:.35rem; color:var(--teal); font-size:.68rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; }
+    .facts dd { margin:0; font-size:.8rem; font-weight:700; letter-spacing:.03em; text-transform:uppercase; }
+    .expertise { color:#fff; background:var(--navy); }
+    .expertise-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; }
+    .expertise-copy .section-title { max-width:35rem; }
+    .expertise-copy .section-intro { color:#fff; }
+    .expertise-links { display:grid; grid-template-columns:1fr 1fr; gap:0 2.4rem; }
+    .expertise-link { display:flex; gap:1rem; min-height:5rem; padding:1.4rem 0; border:0; border-top:1px solid rgb(255 255 255 / 17%); color:#fff; background:transparent; font-size:.95rem; font-weight:700; text-align:left; cursor:pointer; }
+    .expertise-link span { color:var(--teal); font-size:.7rem; }
+    .expertise-link:hover, .expertise-link:focus-visible { color:var(--teal); outline:none; }
+    .quote { max-width:40rem; margin:5rem 0 0; padding-bottom:1.3rem; border-bottom:4px solid var(--teal); font-size:clamp(1.35rem, 2.5vw, 2.2rem); font-weight:700; line-height:1.15; }
+    .about { display:grid; grid-template-columns:1fr 1fr; padding:0; background:var(--cream); }
+    .about-copy { padding:clamp(3rem, 7vw, 8rem) clamp(2rem, 7vw, 8rem); }
+    .about-image { min-height:36rem; background:url("adg-website-assets/our-firm.png") center / cover; }
+    .value-list { display:grid; gap:1.05rem; margin:2.5rem 0 0; padding:0; list-style:none; font-size:.8rem; font-weight:700; }
+    .value-list li::before { content:"•"; margin-right:.8rem; color:var(--teal); }
+    .insights { background:#fff; }
+    .insight-grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:1rem; margin-top:2rem; }
+    .insight { padding:1.6rem; border:1px solid var(--line); }
+    .insight time { display:block; margin-bottom:1rem; color:var(--teal); font-size:.72rem; font-weight:700; }
+    .insight h3 { font-size:1.25rem; line-height:1.1; }
+    .text-link { border:0; padding:0; color:var(--ink); background:transparent; font-size:.8rem; font-weight:700; text-decoration:underline; text-underline-offset:.25rem; cursor:pointer; }
+    .contact { display:grid; grid-template-columns:1fr 1fr; color:#fff; background:var(--navy); }
+    .contact-copy, .contact-form-wrap { padding:clamp(3rem, 7vw, 7rem); }
+    .contact-copy { border-right:1px solid rgb(255 255 255 / 16%); }
+    .contact-copy .section-title { max-width:30rem; }
+    .contact-copy address { margin:2.2rem 0; font-size:.95rem; font-style:normal; line-height:1.8; }
+    .contact-form { display:grid; gap:1.2rem; }
+    .contact-form label { display:grid; gap:.45rem; color:#dce1f5; font-size:.75rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; }
+    .contact-form input, .contact-form textarea { width:100%; padding:.75rem 0; border:0; border-bottom:1px solid rgb(255 255 255 / 45%); color:#fff; background:transparent; outline:none; }
+    .contact-form input:focus, .contact-form textarea:focus { border-color:var(--teal); }
+    .contact-form textarea { min-height:7rem; resize:vertical; }
+    .form-message { min-height:1.4rem; margin:0; color:var(--teal); font-size:.8rem; font-weight:700; }
+    footer { display:flex; justify-content:space-between; gap:1rem; padding:1.4rem 2rem; color:#fff; background:var(--navy-dark); font-size:.7rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; }
+    @media (max-width: 850px) {
+      .nav-shell { min-height:4.5rem; padding:0 1.2rem; }
+      .menu-toggle { display:block; }
+      .nav-list { position:absolute; top:4.5rem; right:0; left:0; display:none; align-items:stretch; flex-direction:column; gap:0; padding:1rem 1.2rem 1.3rem; background:var(--navy); }
+      .nav-list.is-open { display:flex; }
+      .nav-list a { display:block; padding:.8rem 0; }
+      .nav-list .button { justify-content:start; width:fit-content; margin-top:.5rem; padding:.7rem 1rem; }
+      .hero { min-height:38rem; }
+      .capability, .expertise-grid, .about, .contact { grid-template-columns:1fr; gap:2rem; }
+      .about-copy, .contact-copy, .contact-form-wrap { padding:3.5rem 2rem; }
+      .about-image { min-height:24rem; }
+      .contact-copy { border-right:0; border-bottom:1px solid rgb(255 255 255 / 16%); }
+      .featured { grid-template-columns:1fr; }
+      .featured-image { min-height:26rem; }
+    }
+    @media (max-width: 620px) {
+      .section, .hero-inner { padding-right:1.2rem; padding-left:1.2rem; }
+      .stats, .service-cards, .projects, .insight-grid, .expertise-links { grid-template-columns:1fr; }
+      .service-cards { margin-top:2rem; }
+      .collaboration, .work-header { align-items:start; flex-direction:column; }
+      .project-card { min-height:17rem; }
+      .facts { grid-template-columns:1fr; }
+      footer { align-items:start; flex-direction:column; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="logo" href="#home" aria-label="Atlas Design Group home"><span class="logo-mark" aria-hidden="true">ADG</span><span>Atlas Design Group</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">Menu</button>
+      <nav id="primary-navigation" class="nav-list" aria-label="Primary navigation">
+        <a href="#work">Work</a><a href="#expertise">Expertise</a><a href="#about">About</a><a href="ADG_Team.html">Meet the team</a><a href="#insights">Insights</a><a class="button button--outline" href="#contact">Start a project</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="home" class="hero" aria-labelledby="hero-title">
+      <div class="hero-inner">
+        <p class="eyebrow">Structural + Civil Engineering</p>
+        <h1 id="hero-title">Engineering buildings that strengthen communities.</h1>
+        <p class="hero-copy">Responsive partners. Inventive solutions. Technical rigor from concept through construction.</p>
+        <a class="button" href="#work">Explore our work</a>
+      </div>
+      <p class="hero-caption">01 &nbsp; Lake City Community Center &nbsp; Seattle, WA</p>
+    </section>
+
+    <section class="section" aria-labelledby="capability-title">
+      <div class="section-inner">
+        <div class="capability">
+          <div>
+            <p class="section-label">A small firm with big-firm capability</p>
+            <h2 id="capability-title" class="section-title">Deep expertise. Direct access.</h2>
+            <p class="section-intro">We bring senior-level attention, practical creativity, and a client-first mindset to the Pacific Northwest projects that matter most.</p>
+          </div>
+          <div class="stats" aria-label="Company statistics">
+            <div><strong class="stat-number">15+</strong><span class="stat-label">Team members</span></div>
+            <div><strong class="stat-number">2</strong><span class="stat-label">Disciplines</span></div>
+            <div><strong class="stat-number">2019</strong><span class="stat-label">Founded in Seattle</span></div>
+          </div>
+        </div>
+        <div class="service-cards" role="tablist" aria-label="Engineering disciplines">
+          <button class="service-card is-active" type="button" role="tab" aria-selected="true" data-detail="Structural engineering for wood, mass timber, concrete, steel, masonry, seismic retrofit, and construction engineering."><small>Structural</small><h3>Structures that work harder.</h3><p>Wood, mass timber, concrete, steel, masonry, seismic retrofit and construction engineering.</p></button>
+          <button class="service-card" type="button" role="tab" aria-selected="false" data-detail="Civil engineering integrates grading, utilities, stormwater, access, and permitting from the earliest project decisions."><small>Civil</small><h3>Sites designed for connection.</h3><p>Thoughtful grading, utilities, stormwater, access and permitting—coordinated from day one.</p></button>
+          <button class="service-card" type="button" role="tab" aria-selected="false" data-detail="Specialty engineering helps teams deliver seismic evaluation, adaptive reuse, temporary structures, and design-build work with clarity."><small>Specialty</small><h3>Complexity made buildable.</h3><p>Seismic evaluation, adaptive reuse, temporary structures and design-build collaboration.</p></button>
+        </div>
+        <p id="service-detail" class="service-detail" aria-live="polite">Structural engineering for wood, mass timber, concrete, steel, masonry, seismic retrofit, and construction engineering.</p>
+        <div class="collaboration"><div><p class="section-label">Built for collaboration</p><h3>Our process makes engineering visible, understandable, and useful to the entire project team.</h3></div><a class="button button--dark" href="ADG_Team.html">Meet the team</a></div>
+      </div>
+    </section>
+
+    <section id="work" class="section work" aria-labelledby="work-title">
+      <div class="section-inner">
+        <div class="work-header"><div><p class="section-label">Selected work</p><h2 id="work-title" class="section-title">Buildings with purpose.</h2><p class="section-intro">A portfolio grounded in housing, community, and resilient reuse.</p></div></div>
+        <div class="filters" aria-label="Filter projects">
+          <button class="filter is-active" type="button" data-filter="all">All</button><button class="filter" type="button" data-filter="housing">Housing</button><button class="filter" type="button" data-filter="community">Community</button><button class="filter" type="button" data-filter="adaptive">Seismic + adaptive reuse</button><button class="filter" type="button" data-filter="timber">Mass timber</button>
+        </div>
+        <div class="projects">
+          <button class="project-card project-card--hilltop" type="button" data-project="hilltop" data-categories="housing timber"><span class="project-card__content"><span class="project-card__title">Housing Hilltop</span><span class="project-card__type">Affordable Housing · Tacoma</span></span></button>
+          <button class="project-card project-card--prisma" type="button" data-project="prisma" data-categories="housing"><span class="project-card__content"><span class="project-card__title">Prisma Apartments</span><span class="project-card__type">Mixed-Use Housing · Redmond</span></span></button>
+          <button class="project-card project-card--mercy" type="button" data-project="mercy" data-categories="housing community"><span class="project-card__content"><span class="project-card__title">Mercy Aviva Crossing</span><span class="project-card__type">Affordable Housing · Seattle</span></span></button>
+        </div>
+      </div>
+    </section>
+
+    <section id="featured-project" class="featured" aria-labelledby="featured-title">
+      <div id="featured-image" class="featured-image" role="img" aria-label="Housing Hilltop exterior"></div>
+      <div class="featured-copy">
+        <p class="section-label">Featured project</p><h2 id="featured-title" class="section-title">Housing Hilltop</h2><p id="featured-client" class="featured-client">Tacoma Housing Authority</p>
+        <p id="featured-description" class="featured-description">Two new affordable housing buildings delivered through close design-build collaboration with SMR Architects and Walsh Construction.</p>
+        <dl class="facts"><div><dt>Market</dt><dd id="fact-market">Affordable Housing</dd></div><div><dt>Delivery</dt><dd id="fact-delivery">Design-Build</dd></div><div><dt>Services</dt><dd id="fact-services">Structural Engineering</dd></div><div><dt>Systems</dt><dd id="fact-systems">Wood + Concrete</dd></div></dl>
+        <button id="next-project" class="button" type="button">View next project</button>
+      </div>
+    </section>
+
+    <section id="expertise" class="section expertise" aria-labelledby="expertise-title">
+      <div class="section-inner"><div class="expertise-grid"><div class="expertise-copy"><p class="section-label">Expertise</p><h2 id="expertise-title" class="section-title">Engineering that moves the whole project forward.</h2><p class="section-intro">We solve for structure, site, budget, schedule and construction—not in isolation, but as one coordinated design challenge.</p></div>
+        <div class="expertise-links" aria-label="Expertise areas">
+          <button class="expertise-link" type="button" data-service="Affordable and supportive housing brings a deep understanding of program requirements, funding constraints, and durable systems."><span>01</span>Affordable + Supportive Housing</button>
+          <button class="expertise-link" type="button" data-service="Multifamily and mixed-use projects require coordinated systems that deliver efficient, adaptable spaces."><span>02</span>Multifamily + Mixed-Use</button>
+          <button class="expertise-link" type="button" data-service="Our seismic and adaptive-reuse practice helps existing buildings serve their communities for decades longer."><span>03</span>Seismic + Adaptive Reuse</button>
+          <button class="expertise-link" type="button" data-service="Mass timber and wood structures pair warm, efficient materials with practical constructability."><span>04</span>Mass Timber + Wood</button>
+          <button class="expertise-link" type="button" data-service="Community projects balance welcoming spaces with resilient, long-term performance."><span>05</span>Community Projects</button>
+          <button class="expertise-link" type="button" data-service="Construction engineering supports teams with clear, timely technical decisions in the field."><span>06</span>Construction Engineering</button>
+        </div></div><p class="quote" id="expertise-message" aria-live="polite">“Good engineering is not only technically correct. It is clear, collaborative and buildable.”</p></div>
+    </section>
+
+    <section id="about" class="about" aria-labelledby="about-title"><div class="about-copy"><p class="section-label">Our firm</p><h2 id="about-title" class="section-title">Technical excellence, grounded in service.</h2><p class="section-intro">Atlas Design Group was founded in Seattle to bring the client experience back to the center of engineering consulting.</p><p class="section-intro">We are a certified minority-owned firm built around mentorship, diverse perspectives, and a shared commitment to housing and community-serving work.</p><ul class="value-list"><li>Principal-level access</li><li>Diverse, mission-driven team</li><li>Research + development culture</li><li>Washington MBE / DBE / SBE · Oregon MBE</li></ul></div><div class="about-image" role="img" aria-label="Atlas Design Group project exterior"></div></section>
+
+    <section id="insights" class="section insights" aria-labelledby="insights-title"><div class="section-inner"><p class="section-label">Insights</p><h2 id="insights-title" class="section-title">Ideas that help projects move forward.</h2><div class="insight-grid"><article class="insight"><time datetime="2026-09">September 2026</time><h3>Designing for a resilient housing future</h3><button class="text-link" type="button" data-insight="Resilient housing begins with early alignment between structural systems, site conditions, affordability, and long-term maintenance.">Read insight</button></article><article class="insight"><time datetime="2026-08">August 2026</time><h3>Mass timber: clarity from concept to construction</h3><button class="text-link" type="button" data-insight="Mass timber is most effective when the structural system, fabrication strategy, and construction sequence are considered together from the start.">Read insight</button></article><article class="insight"><time datetime="2026-07">July 2026</time><h3>What collaborative engineering looks like</h3><button class="text-link" type="button" data-insight="Collaborative engineering gives every member of the project team timely, understandable decisions that support the shared goals of the project.">Read insight</button></article></div><p id="insight-message" class="service-detail" aria-live="polite"></p></div></section>
+
+    <section id="contact" class="contact" aria-labelledby="contact-title"><div class="contact-copy"><p class="section-label">Let's build something that matters</p><h2 id="contact-title" class="section-title">Bring us your next challenge.</h2><p>Structural + Civil Engineering</p><address>600 1st Avenue, Suite 300<br>Seattle, Washington 98104<br><br><a href="tel:+14254009242">425.400.9242</a> &nbsp;·&nbsp; <a href="https://adg-inc.com">adg-inc.com</a></address></div><div class="contact-form-wrap"><form id="contact-form" class="contact-form"><label>Name<input name="name" autocomplete="name" required></label><label>Email<input name="email" type="email" autocomplete="email" required></label><label>Tell us about your project<textarea name="project" required></textarea></label><button class="button" type="submit">Start a conversation</button><p id="form-message" class="form-message" aria-live="polite"></p></form></div></section>
+  </main>
+  <footer><span>Atlas Design Group</span><span>Structural + Civil Engineering</span><span>Seattle, Washington · adg-inc.com</span></footer>
+  <script>
+    const nav = document.querySelector(".nav-list");
+    const menuToggle = document.querySelector(".menu-toggle");
+    menuToggle.addEventListener("click", () => { const open = nav.classList.toggle("is-open"); menuToggle.setAttribute("aria-expanded", open); menuToggle.textContent = open ? "Close" : "Menu"; });
+    nav.querySelectorAll("a").forEach(link => link.addEventListener("click", () => { nav.classList.remove("is-open"); menuToggle.setAttribute("aria-expanded", "false"); menuToggle.textContent = "Menu"; }));
+
+    document.querySelectorAll(".service-card").forEach(card => card.addEventListener("click", () => {
+      document.querySelectorAll(".service-card").forEach(item => { item.classList.remove("is-active"); item.setAttribute("aria-selected", "false"); });
+      card.classList.add("is-active"); card.setAttribute("aria-selected", "true");
+      document.querySelector("#service-detail").textContent = card.dataset.detail;
+    }));
+
+    const projects = {
+      hilltop: { title:"Housing Hilltop", client:"Tacoma Housing Authority", description:"Two new affordable housing buildings delivered through close design-build collaboration with SMR Architects and Walsh Construction.", market:"Affordable Housing", delivery:"Design-Build", services:"Structural Engineering", systems:"Wood + Concrete", image:"housing-hilltop.png", alt:"Housing Hilltop exterior" },
+      prisma: { title:"Prisma Apartments", client:"Prisma Properties", description:"A mixed-use residential project designed to support an active neighborhood with efficient, resilient structural systems.", market:"Mixed-Use Housing", delivery:"Design-Bid-Build", services:"Structural + Civil Engineering", systems:"Concrete + Steel", image:"prisma-apartments.png", alt:"Prisma Apartments exterior" },
+      mercy: { title:"Mercy Aviva Crossing", client:"Mercy Housing Northwest", description:"Affordable housing in Seattle that pairs welcoming community space with durable systems and collaborative delivery.", market:"Affordable Housing", delivery:"Design-Build", services:"Structural Engineering", systems:"Wood + Concrete", image:"mercy-aviva.png", alt:"Mercy Aviva Crossing exterior" }
+    };
+    const projectOrder = Object.keys(projects); let activeProject = 0;
+    function showProject(key, shouldScroll) {
+      activeProject = projectOrder.indexOf(key); const project = projects[key];
+      document.querySelector("#featured-title").textContent = project.title; document.querySelector("#featured-client").textContent = project.client; document.querySelector("#featured-description").textContent = project.description;
+      document.querySelector("#fact-market").textContent = project.market; document.querySelector("#fact-delivery").textContent = project.delivery; document.querySelector("#fact-services").textContent = project.services; document.querySelector("#fact-systems").textContent = project.systems;
+      const image = document.querySelector("#featured-image"); image.style.backgroundImage = `url("adg-website-assets/${project.image}")`; image.setAttribute("aria-label", project.alt);
+      if (shouldScroll) document.querySelector("#featured-project").scrollIntoView({ behavior:"smooth" });
+    }
+    document.querySelectorAll(".project-card").forEach(card => card.addEventListener("click", () => showProject(card.dataset.project, true)));
+    document.querySelector("#next-project").addEventListener("click", () => showProject(projectOrder[(activeProject + 1) % projectOrder.length], false));
+    document.querySelectorAll(".filter").forEach(filter => filter.addEventListener("click", () => {
+      document.querySelectorAll(".filter").forEach(item => item.classList.remove("is-active")); filter.classList.add("is-active");
+      document.querySelectorAll(".project-card").forEach(card => { card.hidden = filter.dataset.filter !== "all" && !card.dataset.categories.includes(filter.dataset.filter); });
+    }));
+    document.querySelectorAll(".expertise-link").forEach(link => link.addEventListener("click", () => document.querySelector("#expertise-message").textContent = link.dataset.service));
+    document.querySelectorAll("[data-insight]").forEach(button => button.addEventListener("click", () => document.querySelector("#insight-message").textContent = button.dataset.insight));
+    document.querySelector("#contact-form").addEventListener("submit", event => { event.preventDefault(); const name = new FormData(event.currentTarget).get("name"); document.querySelector("#form-message").textContent = `Thanks, ${name}. Your project inquiry is ready to send.`; event.currentTarget.reset(); });
+  </script>
+</body>
+</html>
