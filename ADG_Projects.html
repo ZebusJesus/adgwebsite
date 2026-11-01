@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Selected structural and civil engineering projects by Atlas Design Group.">
+  <title>Projects | Atlas Design Group</title>
+  <style>
+    :root { --navy:#172552; --navy-dark:#0b1330; --cream:#f4f1ea; --teal:#15bebc; --ink:#14204a; --muted:#697088; --max:1380px; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:var(--cream); font-family:Arial, Helvetica, sans-serif; font-size:17px; }
+    a { color:inherit; }
+    .skip-link { position:absolute; z-index:20; top:-4rem; left:1rem; padding:.75rem 1rem; color:#fff; background:var(--navy); }
+    .skip-link:focus { top:1rem; }
+    .site-header { color:var(--navy); background:var(--cream); border-bottom:1px solid rgb(20 32 74 / 10%); }
+    .nav-shell { display:flex; align-items:center; justify-content:space-between; max-width:var(--max); min-height:5.4rem; margin:auto; padding:0 2rem; }
+    .logo { display:flex; align-items:center; gap:.65rem; color:inherit; font-size:.8rem; font-weight:700; letter-spacing:.03em; text-decoration:none; text-transform:uppercase; }
+    .logo-mark { display:grid; width:2rem; height:2rem; place-items:center; border:1px solid currentColor; border-radius:50%; font-size:.5rem; }
+    .nav-list { display:flex; align-items:center; gap:2rem; margin:0; padding:0; list-style:none; font-size:.75rem; font-weight:700; }
+    .nav-list a { color:inherit; text-decoration:none; }
+    .nav-list a:hover, .nav-list a:focus-visible { color:var(--teal); }
+    .button { display:inline-flex; align-items:center; justify-content:center; min-height:2.8rem; padding:.8rem 1.5rem; border:1px solid transparent; border-radius:99px; color:#fff; background:var(--navy); font-size:.75rem; font-weight:700; letter-spacing:.02em; text-decoration:none; text-transform:uppercase; transition:transform .2s, background .2s; }
+    .button:hover, .button:focus-visible { background:var(--teal); outline:none; transform:translateY(-2px); }
+    .menu-toggle { display:none; border:0; color:var(--navy); background:transparent; font-size:1.5rem; cursor:pointer; }
+    .hero { color:#fff; background:var(--navy); }
+    .hero-inner, .projects { width:min(var(--max),100%); margin:auto; }
+    .hero-inner { padding:clamp(5rem,10vw,8rem) 2rem clamp(4rem,8vw,6rem); }
+    .eyebrow { margin:0 0 .8rem; color:var(--teal); font-size:.75rem; font-weight:700; letter-spacing:.07em; text-transform:uppercase; }
+    h1, h2, h3, p { margin-top:0; }
+    h1 { max-width:48rem; margin-bottom:1.25rem; font-size:clamp(3rem,6vw,6rem); line-height:.94; letter-spacing:-.06em; }
+    .hero-copy { max-width:38rem; margin:0; color:#e0e5f4; font-size:1.05rem; line-height:1.5; }
+    .projects { padding:clamp(4rem,8vw,7rem) 2rem; }
+    .section-head { display:flex; align-items:end; justify-content:space-between; gap:2rem; margin-bottom:2.5rem; }
+    .section-head h2 { max-width:37rem; margin:0; font-size:clamp(2rem,4vw,4rem); line-height:1; letter-spacing:-.055em; }
+    .section-head p { max-width:28rem; margin:0; color:var(--muted); font-size:.95rem; line-height:1.5; }
+    .project-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:.75rem; }
+    .project-card { display:flex; min-height:100%; flex-direction:column; overflow:hidden; background:#fff; }
+    .project-card--featured { grid-column:span 2; }
+    .project-image { display:block; width:100%; aspect-ratio:1.55 / 1; object-fit:cover; }
+    .project-card--featured .project-image { aspect-ratio:2.1 / 1; }
+    .project-image--placeholder { display:grid; place-items:center; color:var(--teal); background:var(--navy); font-size:.65rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
+    .project-copy { display:flex; flex:1; flex-direction:column; padding:.85rem .9rem 1rem; }
+    .project-type { margin:0 0 .4rem; color:var(--teal); font-size:.6rem; font-weight:700; letter-spacing:.07em; text-transform:uppercase; }
+    .project-card h3 { margin:0 0 .4rem; font-size:1.05rem; line-height:1; letter-spacing:-.035em; }
+    .project-card p { margin:0; color:var(--muted); font-size:.75rem; line-height:1.35; }
+    .contact { display:flex; justify-content:center; padding:2.5rem 1.5rem; background:var(--cream); }
+    footer { display:flex; justify-content:space-between; gap:1rem; padding:1.4rem 2rem; color:#fff; background:var(--navy-dark); font-size:.7rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; }
+    @media (max-width:850px) {
+      .nav-shell { min-height:4.5rem; padding:0 1.2rem; }
+      .menu-toggle { display:block; }
+      .nav-list { position:absolute; z-index:5; top:4.5rem; right:0; left:0; display:none; align-items:stretch; flex-direction:column; gap:0; padding:1rem 1.2rem 1.3rem; background:var(--cream); box-shadow:0 10px 20px rgb(20 32 74 / 12%); }
+      .nav-list.is-open { display:flex; }
+      .nav-list a { display:block; padding:.8rem 0; }
+      .nav-list .button { width:fit-content; margin-top:.5rem; padding:.7rem 1rem; }
+      .section-head { align-items:start; flex-direction:column; }
+      .project-grid { grid-template-columns:repeat(3,1fr); }
+      .project-card--featured { grid-column:span 2; }
+    }
+    @media (max-width:620px) {
+      .hero-inner, .projects { padding-right:1.2rem; padding-left:1.2rem; }
+      .project-grid { grid-template-columns:repeat(2,1fr); }
+      .project-card--featured { grid-column:auto; }
+      .project-card--featured .project-image { aspect-ratio:1.55 / 1; }
+      footer { align-items:start; flex-direction:column; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="logo" href="./index.html#home" aria-label="Atlas Design Group home"><span class="logo-mark" aria-hidden="true">ADG</span><span>Atlas Design Group</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">Menu</button>
+      <nav id="primary-navigation" class="nav-list" aria-label="Primary navigation">
+        <a href="./ADG_Projects.html" aria-current="page">Projects</a><a href="./ADG_About.html#expertise">Expertise</a><a href="./ADG_About.html#about">About</a><a href="./ADG_Team.html">Meet the team</a><a class="button" href="mailto:chris.padin@adg-inc.com">Start a project</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="projects-title">
+      <div class="hero-inner">
+        <p class="eyebrow">Selected work</p>
+        <h1 id="projects-title">Projects designed to matter.</h1>
+        <p class="hero-copy">A focused selection of housing, education, community, and mixed-use work across the Pacific Northwest.</p>
+      </div>
+    </section>
+
+    <section class="projects" aria-labelledby="selected-projects-title">
+      <div class="section-head">
+        <div><p class="eyebrow">Our portfolio</p><h2 id="selected-projects-title">Practical rigor for complex work.</h2></div>
+        <p>Every project reflects our approach: clear coordination, durable systems, and engineering that supports the people who use and build the work.</p>
+      </div>
+      <div class="project-grid">
+        <article class="project-card project-card--featured">
+          <img class="project-image" src="adg-website-assets/housing-hilltop.png" alt="Rendering of Housing Hilltop">
+          <div class="project-copy"><p class="project-type">Affordable housing · Tacoma</p><h3>Housing Hilltop</h3><p>Two new affordable housing buildings delivered through close design-build collaboration.</p></div>
+        </article>
+        <article class="project-card">
+          <img class="project-image" src="adg-website-assets/projects/wwu-house-of-healing.webp" alt="Western Washington University House of Healing">
+          <div class="project-copy"><p class="project-type">Education · Bellingham</p><h3>WWU House of Healing</h3><p>A Coast Salish style longhouse built around healing, gathering, and community.</p></div>
+        </article>
+        <article class="project-card">
+          <img class="project-image" src="adg-website-assets/projects/snoqualmie-early-learning-center.webp" alt="Snoqualmie Valley School District Early Learning Center">
+          <div class="project-copy"><p class="project-type">Education · Snoqualmie</p><h3>Snoqualmie Valley Early Learning Center</h3><p>Expanded classrooms and seismic improvements supporting early learning.</p></div>
+        </article>
+        <article class="project-card">
+          <img class="project-image" src="adg-website-assets/projects/holly-ridge.webp" alt="Holly Ridge project">
+          <div class="project-copy"><p class="project-type">Mixed-use · Pacific Northwest</p><h3>DevCo Holly Ridge</h3><p>Community-oriented development with efficient, durable structural systems.</p></div>
+        </article>
+        <article class="project-card">
+          <img class="project-image" src="adg-website-assets/projects/the-aries.webp" alt="The Aries project">
+          <div class="project-copy"><p class="project-type">Housing · Pacific Northwest</p><h3>Bellwether The Aries</h3><p>Multifamily housing shaped by constructability, efficiency, and neighborhood context.</p></div>
+        </article>
+        <article class="project-card">
+          <img class="project-image" src="adg-website-assets/projects/rivulet.webp" alt="Rivulet Apartments">
+          <div class="project-copy"><p class="project-type">Multifamily housing</p><h3>Rivulet Apartments</h3><p>A residential project designed around practical systems and welcoming shared spaces.</p></div>
+        </article>
+        <article class="project-card">
+          <img class="project-image" src="adg-website-assets/projects/lake-city-community-center.webp" alt="Lake City Community Center">
+          <div class="project-copy"><p class="project-type">Community · Seattle</p><h3>Lake City Community Center</h3><p>A community-serving project with resilient structure and a clear public presence.</p></div>
+        </article>
+        <article class="project-card">
+          <img class="project-image" src="adg-website-assets/prisma-apartments.png" alt="Prisma Apartments">
+          <div class="project-copy"><p class="project-type">Mixed-use housing</p><h3>Bellwether Prisma</h3><p>Efficient, adaptable systems supporting an active mixed-use neighborhood.</p></div>
+        </article>
+        <article class="project-card">
+          <img class="project-image" src="adg-website-assets/projects/desc-belmont.webp" alt="DESC Belmont">
+          <div class="project-copy"><p class="project-type">Supportive housing</p><h3>DESC Belmont</h3><p>Supportive housing designed for stability, access, and long-term community value.</p></div>
+        </article>
+        <article class="project-card">
+          <img class="project-image" src="adg-website-assets/projects/bridge-ne-120th.webp" alt="BRIDGE NE 120th">
+          <div class="project-copy"><p class="project-type">Affordable housing</p><h3>BRIDGE NE 120th</h3><p>Housing designed around efficient structure and a strong neighborhood connection.</p></div>
+        </article>
+        <article class="project-card">
+          <img class="project-image" src="adg-website-assets/projects/beacon-crossing.webp" alt="Beacon Crossing">
+          <div class="project-copy"><p class="project-type">Affordable housing</p><h3>SRI Beacon Crossing</h3><p>Durable housing designed to support community, access, and long-term value.</p></div>
+        </article>
+        <article class="project-card"><img class="project-image" src="adg-website-assets/projects/desc-clover-place.webp" alt="DESC Clover Place"><div class="project-copy"><p class="project-type">Supportive housing · Seattle</p><h3>DESC Clover Place</h3><p>Supportive housing shaped around dignity, stability, and long-term community use.</p></div></article>
+        <article class="project-card"><img class="project-image" src="adg-website-assets/projects/devco-vantage.webp" alt="DevCo Vantage"><div class="project-copy"><p class="project-type">Community development</p><h3>DevCo Vantage</h3><p>A carefully coordinated project balancing shared amenities with efficient structure.</p></div></article>
+        <article class="project-card"><img class="project-image" src="adg-website-assets/projects/evergreen-pointe.webp" alt="Evergreen Pointe"><div class="project-copy"><p class="project-type">Affordable housing</p><h3>Evergreen Pointe</h3><p>Durable, practical housing systems supporting a welcoming neighborhood setting.</p></div></article>
+        <article class="project-card"><img class="project-image" src="adg-website-assets/projects/desc-north-star.webp" alt="DESC North Star"><div class="project-copy"><p class="project-type">Supportive housing</p><h3>DESC North Star</h3><p>Supportive housing that prioritizes dignity, resilience, and community connection.</p></div></article>
+        <article class="project-card"><img class="project-image" src="adg-website-assets/projects/desc-bloomside.webp" alt="DESC Bloomside"><div class="project-copy"><p class="project-type">Supportive housing</p><h3>DESC Bloomside</h3><p>Durable systems supporting a welcoming and stable home for residents.</p></div></article>
+        <article class="project-card"><img class="project-image" src="adg-website-assets/projects/desc-birch-grove.webp" alt="DESC Birch Grove"><div class="project-copy"><p class="project-type">Supportive housing</p><h3>DESC Birch Grove</h3><p>Community-serving housing designed for long-term performance and access.</p></div></article>
+        <article class="project-card"><img class="project-image" src="adg-website-assets/projects/devco-arbour.webp" alt="DevCo The Arbour"><div class="project-copy"><p class="project-type">Mixed-use development</p><h3>DevCo The Arbour</h3><p>Efficient project systems supporting a connected, active neighborhood.</p></div></article>
+        <article class="project-card"><img class="project-image" src="adg-website-assets/projects/devco-west-franklin.webp" alt="DevCo West Franklin"><div class="project-copy"><p class="project-type">Mixed-use development</p><h3>DevCo West Franklin</h3><p>Practical structural coordination for a complex community project.</p></div></article>
+        <article class="project-card"><img class="project-image" src="adg-website-assets/projects/thunderbird-nest.webp" alt="Thunderbird Nest"><div class="project-copy"><p class="project-type">Community housing</p><h3>Thunderbird Nest</h3><p>A community-focused project shaped by practical, resilient design.</p></div></article>
+        <article class="project-card"><img class="project-image" src="adg-website-assets/projects/acg-brierwood.webp" alt="ACG Brierwood"><div class="project-copy"><p class="project-type">Housing</p><h3>ACG Brierwood</h3><p>Efficient structural systems supporting a welcoming residential setting.</p></div></article>
+        <article class="project-card"><img class="project-image" src="adg-website-assets/projects/gctc-hope-place.webp" alt="GCTC Hope Place"><div class="project-copy"><p class="project-type">Supportive housing</p><h3>GCTC Hope Place</h3><p>Supportive housing designed around durability, access, and belonging.</p></div></article>
+        <article class="project-card"><img class="project-image" src="adg-website-assets/projects/devco-domes.webp" alt="DevCo Domes"><div class="project-copy"><p class="project-type">Community</p><h3>DevCo Domes</h3><p>A distinctive community project pairing expressive form with practical structure.</p></div></article>
+        <article class="project-card"><img class="project-image" src="adg-website-assets/projects/dhaliwal-landing.webp" alt="Dhaliwal Landing"><div class="project-copy"><p class="project-type">Housing</p><h3>Dhaliwal Landing</h3><p>Residential systems designed for efficient construction and lasting value.</p></div></article>
+        <article class="project-card"><img class="project-image" src="adg-website-assets/projects/mhnw-aviva-crossing.webp" alt="MHNW Aviva Crossing"><div class="project-copy"><p class="project-type">Affordable housing</p><h3>MHNW Aviva Crossing</h3><p>Affordable housing that pairs welcoming community space with durable systems.</p></div></article>
+        <article class="project-card"><img class="project-image" src="adg-website-assets/projects/approach-at-kenmore.webp" alt="The Approach at Kenmore"><div class="project-copy"><p class="project-type">Housing · Kenmore</p><h3>The Approach at Kenmore</h3><p>A residential project shaped by efficient systems and neighborhood context.</p></div></article>
+        <article class="project-card"><img class="project-image" src="adg-website-assets/projects/two-rivers-early-learning.webp" alt="Two Rivers Early Learning Center"><div class="project-copy"><p class="project-type">Education</p><h3>Two Rivers Early Learning Center</h3><p>Learning spaces supported by clear, durable, and adaptable structure.</p></div></article>
+        <article class="project-card"><div class="project-image project-image--placeholder" role="img" aria-label="Cherry Fellowship Hall project image coming soon"><span>Coming soon</span></div><div class="project-copy"><p class="project-type">Community</p><h3>Cherry Fellowship Hall</h3><p>A gathering space designed to support community, connection, and service.</p></div></article>
+        <article class="project-card"><div class="project-image project-image--placeholder" role="img" aria-label="Chenowith Loop Housing project image coming soon"><span>Coming soon</span></div><div class="project-copy"><p class="project-type">Affordable housing</p><h3>Chenowith Loop Housing</h3><p>Housing planned around durable systems and community-serving spaces.</p></div></article>
+        <article class="project-card"><div class="project-image project-image--placeholder" role="img" aria-label="Cascadia School Expansion project image coming soon"><span>Coming soon</span></div><div class="project-copy"><p class="project-type">Education</p><h3>Cascadia School Expansion</h3><p>Expanded learning space supported by clear, adaptable structural design.</p></div></article>
+        <article class="project-card"><div class="project-image project-image--placeholder" role="img" aria-label="HTH Federal Way Adaptive Reuse project image coming soon"><span>Coming soon</span></div><div class="project-copy"><p class="project-type">Adaptive reuse</p><h3>HTH Federal Way Adaptive Reuse</h3><p>Existing-building strategies that extend useful life and community value.</p></div></article>
+        <article class="project-card"><div class="project-image project-image--placeholder" role="img" aria-label="MHNW Burien Housing project image coming soon"><span>Coming soon</span></div><div class="project-copy"><p class="project-type">Affordable housing</p><h3>MHNW Burien Housing</h3><p>Durable housing systems planned for long-term resident and community needs.</p></div></article>
+        <article class="project-card"><div class="project-image project-image--placeholder" role="img" aria-label="Rainer Beach Family Empowerment Center project image coming soon"><span>Coming soon</span></div><div class="project-copy"><p class="project-type">Community</p><h3>Rainer Beach Family Empowerment Center</h3><p>A community resource center designed for connection and opportunity.</p></div></article>
+        <article class="project-card"><div class="project-image project-image--placeholder" role="img" aria-label="Saint Vincent de Paul Housing project image coming soon"><span>Coming soon</span></div><div class="project-copy"><p class="project-type">Affordable housing</p><h3>Saint Vincent de Paul Housing</h3><p>Housing designed to support stability, dignity, and community care.</p></div></article>
+        <article class="project-card"><div class="project-image project-image--placeholder" role="img" aria-label="DESC Morrison Seismic Upgrade project image coming soon"><span>Coming soon</span></div><div class="project-copy"><p class="project-type">Seismic upgrade</p><h3>DESC Morrison Seismic Upgrade</h3><p>Seismic improvements that strengthen an existing community-serving building.</p></div></article>
+        <article class="project-card"><div class="project-image project-image--placeholder" role="img" aria-label="Path Home Portland project image coming soon"><span>Coming soon</span></div><div class="project-copy"><p class="project-type">Supportive housing · Portland</p><h3>Path Home Portland</h3><p>Community-serving housing designed around stability and practical care.</p></div></article>
+        <article class="project-card"><div class="project-image project-image--placeholder" role="img" aria-label="PBH Outpatient Office project image coming soon"><span>Coming soon</span></div><div class="project-copy"><p class="project-type">Healthcare</p><h3>PBH Outpatient Office</h3><p>A clear, adaptable structural approach for an essential outpatient setting.</p></div></article>
+        <article class="project-card"><div class="project-image project-image--placeholder" role="img" aria-label="HTH Redmond Adaptive Reuse project image coming soon"><span>Coming soon</span></div><div class="project-copy"><p class="project-type">Adaptive reuse</p><h3>HTH Redmond Adaptive Reuse</h3><p>Strategies for giving an existing building a resilient next chapter.</p></div></article>
+        <article class="project-card"><div class="project-image project-image--placeholder" role="img" aria-label="DevCo Fieldstone project image coming soon"><span>Coming soon</span></div><div class="project-copy"><p class="project-type">Mixed-use development</p><h3>DevCo Fieldstone</h3><p>Efficient systems supporting a durable and connected development.</p></div></article>
+      </div>
+    </section>
+
+    <section class="contact" aria-label="Contact us"><a class="button" href="mailto:chris.padin@adg-inc.com">Start a conversation</a></section>
+  </main>
+  <footer><span>Atlas Design Group</span><span>Structural + Civil Engineering</span><span>Seattle, Washington · adg-inc.com</span></footer>
+  <script>
+    const nav = document.querySelector(".nav-list"), toggle = document.querySelector(".menu-toggle");
+    toggle.addEventListener("click", () => { const open = nav.classList.toggle("is-open"); toggle.setAttribute("aria-expanded", open); toggle.textContent = open ? "Close" : "Menu"; });
+    nav.querySelectorAll("a").forEach(link => link.addEventListener("click", () => { nav.classList.remove("is-open"); toggle.setAttribute("aria-expanded", "false"); toggle.textContent = "Menu"; }));
+
+  </script>
+</body>
+</html>
