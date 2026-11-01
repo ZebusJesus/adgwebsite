@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Learn about Atlas Design Group and our structural and civil engineering expertise.">
+  <title>About | Atlas Design Group</title>
+  <style>
+    :root { --navy:#172552; --navy-dark:#0b1330; --cream:#f4f1ea; --teal:#15bebc; --ink:#14204a; --muted:#697088; --max:1380px; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:var(--cream); font-family:Arial, Helvetica, sans-serif; font-size:17px; }
+    a { color:inherit; }
+    button { font:inherit; }
+    .skip-link { position:absolute; z-index:20; top:-4rem; left:1rem; padding:.75rem 1rem; color:#fff; background:var(--navy); }
+    .skip-link:focus { top:1rem; }
+    .site-header { color:var(--navy); background:var(--cream); border-bottom:1px solid rgb(20 32 74 / 10%); }
+    .nav-shell { display:flex; align-items:center; justify-content:space-between; max-width:var(--max); min-height:5.4rem; margin:auto; padding:0 2rem; }
+    .logo { display:flex; align-items:center; gap:.65rem; color:inherit; font-size:.8rem; font-weight:700; letter-spacing:.03em; text-decoration:none; text-transform:uppercase; }
+    .logo-mark { display:grid; width:2rem; height:2rem; place-items:center; border:1px solid currentColor; border-radius:50%; font-size:.5rem; }
+    .nav-list { display:flex; align-items:center; gap:2rem; margin:0; padding:0; list-style:none; font-size:.75rem; font-weight:700; }
+    .nav-list a { color:inherit; text-decoration:none; }
+    .nav-list a:hover, .nav-list a:focus-visible { color:var(--teal); }
+    .button { display:inline-flex; align-items:center; justify-content:center; min-height:2.8rem; padding:.8rem 1.5rem; border:1px solid transparent; border-radius:99px; color:#fff; background:var(--navy); font-size:.75rem; font-weight:700; letter-spacing:.02em; text-decoration:none; text-transform:uppercase; cursor:pointer; transition:transform .2s, background .2s, color .2s; }
+    .button:hover, .button:focus-visible { color:#fff; background:var(--teal); outline:none; transform:translateY(-2px); }
+    .menu-toggle { display:none; border:0; color:var(--navy); background:transparent; font-size:1.5rem; cursor:pointer; }
+    .hero { color:#fff; background:var(--navy); }
+    .hero-inner, .section-inner { width:min(var(--max),100%); margin:auto; }
+    .hero-inner { padding:clamp(5rem,10vw,8rem) 2rem clamp(4rem,8vw,6rem); }
+    .eyebrow, .section-label { margin:0 0 .8rem; color:var(--teal); font-size:.75rem; font-weight:700; letter-spacing:.07em; text-transform:uppercase; }
+    h1, h2, h3, p { margin-top:0; }
+    h1 { max-width:48rem; margin-bottom:1.25rem; font-size:clamp(3rem,6vw,6rem); line-height:.94; letter-spacing:-.06em; }
+    .hero-copy { max-width:40rem; margin:0; color:#e0e5f4; font-size:1.05rem; line-height:1.5; }
+    .section { padding:clamp(4rem,8vw,8rem) 2rem; }
+    .section-title { max-width:46rem; margin-bottom:1rem; font-size:clamp(2.1rem,4vw,4.25rem); line-height:1; letter-spacing:-.05em; }
+    .section-intro { max-width:41rem; color:var(--muted); font-size:1.05rem; line-height:1.55; }
+    .about { background:var(--cream); }
+    .about-copy { max-width:58rem; }
+    .value-list { display:grid; gap:1.05rem; margin:2.5rem 0 0; padding:0; list-style:none; font-size:.8rem; font-weight:700; }
+    .value-list li::before { content:"•"; margin-right:.8rem; color:var(--teal); }
+    .expertise { color:#fff; background:var(--navy); }
+    .expertise-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; }
+    .expertise-copy .section-title { max-width:35rem; }
+    .expertise-copy .section-intro { color:#fff; }
+    .expertise-links { display:grid; grid-template-columns:1fr 1fr; gap:0 2.4rem; }
+    .expertise-link { display:flex; gap:1rem; min-height:5rem; padding:1.4rem 0; border:0; border-top:1px solid rgb(255 255 255 / 17%); color:#fff; background:transparent; font-size:.95rem; font-weight:700; text-align:left; cursor:pointer; }
+    .expertise-link span { color:var(--teal); font-size:.7rem; }
+    .expertise-link:hover, .expertise-link:focus-visible { color:var(--teal); outline:none; }
+    .quote { max-width:40rem; margin:5rem 0 0; padding-bottom:1.3rem; border-bottom:4px solid var(--teal); font-size:clamp(1.35rem,2.5vw,2.2rem); font-weight:700; line-height:1.15; }
+    .contact { display:flex; justify-content:center; padding:2.5rem 1.5rem; background:var(--cream); }
+    footer { display:flex; justify-content:space-between; gap:1rem; padding:1.4rem 2rem; color:#fff; background:var(--navy-dark); font-size:.7rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; }
+    @media (max-width:850px) {
+      .nav-shell { min-height:4.5rem; padding:0 1.2rem; }
+      .menu-toggle { display:block; }
+      .nav-list { position:absolute; z-index:5; top:4.5rem; right:0; left:0; display:none; align-items:stretch; flex-direction:column; gap:0; padding:1rem 1.2rem 1.3rem; background:var(--cream); box-shadow:0 10px 20px rgb(20 32 74 / 12%); }
+      .nav-list.is-open { display:flex; }
+      .nav-list a { display:block; padding:.8rem 0; }
+      .nav-list .button { width:fit-content; margin-top:.5rem; padding:.7rem 1rem; }
+      .expertise-grid { grid-template-columns:1fr; gap:2rem; }
+    }
+    @media (max-width:620px) {
+      .hero-inner, .section { padding-right:1.2rem; padding-left:1.2rem; }
+      .expertise-links { grid-template-columns:1fr; }
+      footer { align-items:start; flex-direction:column; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="logo" href="./index.html#home" aria-label="Atlas Design Group home"><span class="logo-mark" aria-hidden="true">ADG</span><span>Atlas Design Group</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">Menu</button>
+      <nav id="primary-navigation" class="nav-list" aria-label="Primary navigation">
+        <a href="./ADG_Projects.html">Projects</a><a href="#expertise">Expertise</a><a href="#about">About</a><a href="./ADG_Team.html">Meet the team</a><a class="button" href="mailto:chris.padin@adg-inc.com">Start a project</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="about-page-title">
+      <div class="hero-inner">
+        <p class="eyebrow">Our firm</p>
+        <h1 id="about-page-title">Technical excellence, grounded in service.</h1>
+        <p class="hero-copy">Atlas Design Group brings structural, civil, BIM, and construction expertise together to help housing and community-serving projects move forward with clarity.</p>
+      </div>
+    </section>
+
+    <section id="about" class="section about" aria-labelledby="about-title">
+      <div class="section-inner about-copy">
+        <p class="section-label">About Atlas</p>
+        <h2 id="about-title" class="section-title">A better client experience for meaningful work.</h2>
+        <p class="section-intro">Atlas Design Group was founded in Seattle to bring the client experience back to the center of engineering consulting.</p>
+        <p class="section-intro">We are a certified minority-owned firm built around mentorship, diverse perspectives, and a shared commitment to housing and community-serving work.</p>
+        <ul class="value-list">
+          <li>Principal-level access</li>
+          <li>Diverse, mission-driven team</li>
+          <li>Research + development culture</li>
+          <li>Washington MBE / DBE / SBE · Oregon MBE</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="expertise" class="section expertise" aria-labelledby="expertise-title">
+      <div class="section-inner">
+        <div class="expertise-grid">
+          <div class="expertise-copy">
+            <p class="section-label">Expertise</p>
+            <h2 id="expertise-title" class="section-title">Engineering that moves the whole project forward.</h2>
+            <p class="section-intro">We solve for structure, site, budget, schedule and construction—not in isolation, but as one coordinated design challenge.</p>
+          </div>
+          <div class="expertise-links" aria-label="Expertise areas">
+            <button class="expertise-link" type="button" data-service="Affordable and supportive housing brings a deep understanding of program requirements, funding constraints, and durable systems."><span>01</span>Affordable + Supportive Housing</button>
+            <button class="expertise-link" type="button" data-service="Multifamily and mixed-use projects require coordinated systems that deliver efficient, adaptable spaces."><span>02</span>Multifamily + Mixed-Use</button>
+            <button class="expertise-link" type="button" data-service="Our seismic and adaptive-reuse practice helps existing buildings serve their communities for decades longer."><span>03</span>Seismic + Adaptive Reuse</button>
+            <button class="expertise-link" type="button" data-service="Mass timber and wood structures pair warm, efficient materials with practical constructability."><span>04</span>Mass Timber + Wood</button>
+            <button class="expertise-link" type="button" data-service="Community projects balance welcoming spaces with resilient, long-term performance."><span>05</span>Community Projects</button>
+            <button class="expertise-link" type="button" data-service="Construction engineering supports teams with clear, timely technical decisions in the field."><span>06</span>Construction Engineering</button>
+          </div>
+        </div>
+        <p class="quote" id="expertise-message" aria-live="polite">“Good engineering is not only technically correct. It is clear, collaborative and buildable.”</p>
+      </div>
+    </section>
+
+    <section class="contact" aria-label="Contact us"><a class="button" href="mailto:chris.padin@adg-inc.com">Start a conversation</a></section>
+  </main>
+  <footer><span>Atlas Design Group</span><span>Structural + Civil Engineering</span><span>Seattle, Washington · adg-inc.com</span></footer>
+  <script>
+    const nav = document.querySelector(".nav-list"), toggle = document.querySelector(".menu-toggle");
+    toggle.addEventListener("click", () => { const open = nav.classList.toggle("is-open"); toggle.setAttribute("aria-expanded", open); toggle.textContent = open ? "Close" : "Menu"; });
+    nav.querySelectorAll("a").forEach(link => link.addEventListener("click", () => { nav.classList.remove("is-open"); toggle.setAttribute("aria-expanded", "false"); toggle.textContent = "Menu"; }));
+    document.querySelectorAll(".expertise-link").forEach(link => link.addEventListener("click", () => document.querySelector("#expertise-message").textContent = link.dataset.service));
+  </script>
+</body>
+</html>
