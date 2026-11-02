@@ -26,8 +26,8 @@
     .button--outline { color:#fff; border-color:rgb(255 255 255 / 70%); background:transparent; }
     .button--dark { color:#fff; background:var(--navy); }
     .menu-toggle { display:none; border:0; color:#fff; background:transparent; font-size:1.5rem; cursor:pointer; }
-    .hero { position:relative; display:grid; min-height:38rem; place-items:end start; color:#fff; background:linear-gradient(90deg, rgb(8 17 48 / 72%), rgb(8 17 48 / 23%)), url("adg-website-assets/hero-lake-city.png") center / cover; }
-    .hero-inner { width:min(var(--max), 100%); padding:8rem 2rem 4.5rem; margin:auto; }
+    .hero { position:relative; display:grid; min-height:32rem; place-items:end start; color:#fff; background:linear-gradient(90deg, rgb(8 17 48 / 72%), rgb(8 17 48 / 23%)), url("adg-website-assets/hero-lake-city.png") center / cover; }
+    .hero-inner { width:min(var(--max), 100%); padding:7rem 2rem 3.5rem; margin:auto; }
     .eyebrow { margin:0 0 .8rem; color:var(--teal); font-size:.75rem; font-weight:700; letter-spacing:.07em; text-transform:uppercase; }
     h1, h2, h3, p { margin-top:0; }
     h1 { max-width:43rem; margin-bottom:1.25rem; font-size:clamp(2.8rem, 5.3vw, 5.6rem); line-height:.98; letter-spacing:-.055em; }
@@ -53,12 +53,12 @@
     .collaboration { display:flex; align-items:end; justify-content:space-between; gap:2rem; padding-top:3.5rem; }
     .collaboration h3 { max-width:32rem; margin:0; font-size:clamp(1.55rem, 2.6vw, 2.5rem); letter-spacing:-.04em; }
     .featured { display:grid; grid-template-columns:1.25fr .95fr; color:#fff; background:var(--navy); }
-    .featured-image { min-height:37rem; background:url("adg-website-assets/housing-hilltop.png") center / cover; }
-    .featured-copy { display:flex; flex-direction:column; align-items:start; justify-content:center; padding:clamp(2.5rem, 5vw, 5rem); }
+    .featured-image { min-height:28rem; background:url("adg-website-assets/housing-hilltop.png") center / cover; }
+    .featured-copy { display:flex; flex-direction:column; align-items:start; justify-content:center; padding:clamp(2rem, 3.5vw, 3.25rem); }
     .featured-copy .section-title { margin-bottom:.4rem; }
-    .featured-client { margin:0 0 2rem; font-size:.95rem; font-weight:700; }
-    .featured-description { max-width:28rem; margin-bottom:2.5rem; font-size:.95rem; line-height:1.5; }
-    .facts { display:grid; width:100%; grid-template-columns:1fr 1fr; gap:1.3rem 1rem; margin-bottom:2rem; }
+    .featured-client { margin:0 0 1.2rem; font-size:.85rem; font-weight:700; }
+    .featured-description { max-width:28rem; margin-bottom:1.5rem; font-size:.85rem; line-height:1.45; }
+    .facts { display:grid; width:100%; grid-template-columns:1fr 1fr; gap:1rem .8rem; margin-bottom:1.25rem; }
     .facts dt { margin-bottom:.35rem; color:var(--teal); font-size:.68rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; }
     .facts dd { margin:0; font-size:.8rem; font-weight:700; letter-spacing:.03em; text-transform:uppercase; }
     .contact { display:flex; justify-content:center; padding:2.5rem 1.5rem; background:var(--navy); }
@@ -70,10 +70,10 @@
       .nav-list.is-open { display:flex; }
       .nav-list a { display:block; padding:.8rem 0; }
       .nav-list .button { justify-content:start; width:fit-content; margin-top:.5rem; padding:.7rem 1rem; }
-      .hero { min-height:33rem; }
+      .hero { min-height:28rem; }
       .capability { grid-template-columns:1fr; gap:2rem; }
       .featured { grid-template-columns:1fr; }
-      .featured-image { min-height:26rem; }
+      .featured-image { min-height:20rem; }
     }
     @media (max-width: 620px) {
       .section, .hero-inner { padding-right:1.2rem; padding-left:1.2rem; }
@@ -103,7 +103,6 @@
         <p class="eyebrow">Structural + Civil Engineering</p>
         <h1 id="hero-title">Engineering buildings that strengthen communities.</h1>
         <p class="hero-copy">Responsive partners. Inventive solutions. Technical rigor from concept through construction.</p>
-        <a class="button" href="mailto:chris.padin@adg-inc.com">Start a project</a>
       </div>
       <p class="hero-caption">01 &nbsp; Lake City Community Center &nbsp; Seattle, WA</p>
     </section>
