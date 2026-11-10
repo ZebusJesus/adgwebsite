@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Selected structural and civil engineering projects by Atlas Design Group.">
+  <meta name="description" content="Selected structural engineering and seismic design projects by Atlas Design Group.">
   <title>Projects | Atlas Design Group</title>
   <style>
     :root { --navy:#172552; --navy-dark:#0b1330; --cream:#f4f1ea; --teal:#15bebc; --ink:#14204a; --muted:#697088; --max:1380px; }
@@ -16,12 +16,14 @@
     .site-header { color:var(--navy); background:var(--cream); border-bottom:1px solid rgb(20 32 74 / 10%); }
     .nav-shell { display:flex; align-items:center; justify-content:space-between; max-width:var(--max); min-height:5.4rem; margin:auto; padding:0 2rem; }
     .logo { display:flex; align-items:center; gap:.65rem; color:inherit; font-size:.8rem; font-weight:700; letter-spacing:.03em; text-decoration:none; text-transform:uppercase; }
-    .logo-mark { display:grid; width:2rem; height:2rem; place-items:center; border:1px solid currentColor; border-radius:50%; font-size:.5rem; }
+    .logo img { display:block; width:10.5rem; height:3.85rem; object-fit:cover; object-position:50% 47%; mix-blend-mode:multiply; }
     .nav-list { display:flex; align-items:center; gap:2rem; margin:0; padding:0; list-style:none; font-size:.75rem; font-weight:700; }
     .nav-list a { color:inherit; text-decoration:none; }
     .nav-list a:hover, .nav-list a:focus-visible { color:var(--teal); }
     .button { display:inline-flex; align-items:center; justify-content:center; min-height:2.8rem; padding:.8rem 1.5rem; border:1px solid transparent; border-radius:99px; color:#fff; background:var(--navy); font-size:.75rem; font-weight:700; letter-spacing:.02em; text-decoration:none; text-transform:uppercase; transition:transform .2s, background .2s; }
     .button:hover, .button:focus-visible { background:var(--teal); outline:none; transform:translateY(-2px); }
+    .button--outline, .nav-list a.button--outline { color:var(--navy); border-color:var(--navy); background:transparent; }
+    .nav-list a.button--outline:hover, .nav-list a.button--outline:focus-visible { color:var(--teal); border-color:var(--teal); background:transparent; }
     .menu-toggle { display:none; border:0; color:var(--navy); background:transparent; font-size:1.5rem; cursor:pointer; }
     .hero { color:#fff; background:var(--navy); }
     .hero-inner, .projects { width:min(var(--max),100%); margin:auto; }
@@ -37,7 +39,7 @@
     .project-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:.75rem; }
     .project-card { display:flex; min-height:100%; flex-direction:column; overflow:hidden; background:#fff; }
     .project-card--featured { grid-column:span 2; }
-    .project-image { display:block; width:100%; aspect-ratio:1.55 / 1; object-fit:cover; }
+    .project-image { display:block; width:100%; aspect-ratio:1.55 / 1; object-fit:cover; object-position:50% 47%; }
     .project-card--featured .project-image { aspect-ratio:2.1 / 1; }
     .project-image--placeholder { display:grid; place-items:center; color:var(--teal); background:var(--navy); font-size:.65rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
     .project-copy { display:flex; flex:1; flex-direction:column; padding:.85rem .9rem 1rem; }
@@ -70,10 +72,10 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="nav-shell">
-      <a class="logo" href="./index.html#home" aria-label="Atlas Design Group home"><span class="logo-mark" aria-hidden="true">ADG</span><span>Atlas Design Group</span></a>
+      <a class="logo" href="./index.html#home" aria-label="Atlas Design Group home"><img src="./adg-website-assets/AtlasLogo.png" alt="Atlas Design Group"></a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">Menu</button>
       <nav id="primary-navigation" class="nav-list" aria-label="Primary navigation">
-        <a href="./ADG_Projects.html" aria-current="page">Projects</a><a href="./ADG_About.html#expertise">Expertise</a><a href="./ADG_About.html#about">About</a><a href="./ADG_Team.html">Meet the team</a><a class="button" href="mailto:chris.padin@adg-inc.com">Start a project</a>
+        <a href="./ADG_Projects.html" aria-current="page">Projects</a><a href="./ADG_About.html#expertise">Expertise</a><a href="./ADG_About.html#about">About</a><a href="./ADG_Team.html">Meet the team</a><a class="button button--outline" href="mailto:chris.padin@adg-inc.com">Start a project</a>
       </nav>
     </div>
   </header>
@@ -170,7 +172,7 @@
 
     <section class="contact" aria-label="Contact us"><a class="button" href="mailto:chris.padin@adg-inc.com">Start a conversation</a></section>
   </main>
-  <footer><span>Atlas Design Group</span><span>Structural + Civil Engineering</span><span>Seattle, Washington · adg-inc.com</span></footer>
+  <footer><span>Atlas Design Group</span><span>Structural + Seismic Design</span><span>Seattle, Washington · adg-inc.com</span></footer>
   <script>
     const nav = document.querySelector(".nav-list"), toggle = document.querySelector(".menu-toggle");
     toggle.addEventListener("click", () => { const open = nav.classList.toggle("is-open"); toggle.setAttribute("aria-expanded", open); toggle.textContent = open ? "Close" : "Menu"; });
