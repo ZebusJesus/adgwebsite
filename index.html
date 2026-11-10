@@ -37,6 +37,7 @@
     .section { padding:clamp(4rem, 8vw, 8rem) 2rem; }
     .section-inner { width:min(var(--max), 100%); margin:auto; }
     .section-label { margin:0 0 .5rem; color:var(--teal); font-size:.65rem; font-weight:700; letter-spacing:.07em; text-transform:uppercase; }
+    .section-label--award { margin-bottom:1rem; font-size:1.3rem; letter-spacing:.1em; }
     .section-title { max-width:46rem; margin-bottom:1rem; font-size:clamp(2.1rem, 4vw, 4.25rem); line-height:1; letter-spacing:-.05em; }
     .section-intro { max-width:41rem; color:var(--muted); font-size:1.05rem; line-height:1.55; }
     .capability { display:grid; grid-template-columns:1.1fr .8fr; gap:5rem; align-items:end; }
@@ -51,10 +52,11 @@
     .service-card h3 { margin-bottom:.7rem; font-size:1.25rem; }
     .service-card p { margin:0; color:inherit; font-size:.95rem; line-height:1.5; opacity:.76; }
     .service-detail { min-height:1.5rem; margin:1.2rem 0 0; color:var(--muted); font-size:.9rem; }
-    .collaboration { display:flex; align-items:end; justify-content:space-between; gap:2rem; padding-top:3.5rem; }
+    .collaboration { display:flex; align-items:center; justify-content:flex-start; gap:3rem; padding-top:3.5rem; }
+    .collaboration .button { min-height:3.8rem; padding:1.1rem 2.4rem; font-size:1.1rem; }
     .collaboration h3 { max-width:32rem; margin:0; font-size:clamp(1.55rem, 2.6vw, 2.5rem); letter-spacing:-.04em; }
     .featured { display:grid; grid-template-columns:1.25fr .95fr; color:#fff; background:var(--navy); }
-    .featured-image { min-height:28rem; background:url("adg-website-assets/housing-hilltop.png") center / cover; }
+    .featured-image { min-height:28rem; background:url("adg-website-assets/mercy-aviva.png") center / cover; }
     .featured-copy { display:flex; flex-direction:column; align-items:start; justify-content:center; padding:clamp(2rem, 3.5vw, 3.25rem); }
     .featured-copy .section-title { margin-bottom:.4rem; }
     .featured-client { margin:0 0 1.2rem; font-size:.85rem; font-weight:700; }
@@ -132,10 +134,10 @@
     </section>
 
     <section id="featured-project" class="featured" aria-labelledby="featured-title">
-      <div id="featured-image" class="featured-image" role="img" aria-label="Housing Hilltop exterior"></div>
+      <div id="featured-image" class="featured-image" role="img" aria-label="Mercy Aviva Crossing exterior"></div>
       <div class="featured-copy">
-        <p class="section-label">Featured project</p><h2 id="featured-title" class="section-title">Housing Hilltop</h2><p id="featured-client" class="featured-client">Tacoma Housing Authority</p>
-        <p id="featured-description" class="featured-description">Two new affordable housing buildings delivered through close design-build collaboration with SMR Architects and Walsh Construction.</p>
+        <p class="section-label section-label--award">Award winning project</p><h2 id="featured-title" class="section-title">Mercy Aviva Crossing</h2><p id="featured-client" class="featured-client">Mercy Housing Northwest</p>
+        <p id="featured-description" class="featured-description">Affordable housing in Seattle that pairs welcoming community space with durable systems and collaborative delivery.</p>
         <dl class="facts"><div><dt>Market</dt><dd id="fact-market">Affordable Housing</dd></div><div><dt>Delivery</dt><dd id="fact-delivery">Design-Build</dd></div><div><dt>Services</dt><dd id="fact-services">Structural Engineering</dd></div><div><dt>Systems</dt><dd id="fact-systems">Wood + Concrete</dd></div></dl>
         <button id="next-project" class="button" type="button">View next project</button>
       </div>
@@ -151,9 +153,9 @@
     nav.querySelectorAll("a").forEach(link => link.addEventListener("click", () => { nav.classList.remove("is-open"); menuToggle.setAttribute("aria-expanded", "false"); menuToggle.textContent = "Menu"; }));
 
     const projects = {
+      mercy: { title:"Mercy Aviva Crossing", client:"Mercy Housing Northwest", description:"Affordable housing in Seattle that pairs welcoming community space with durable systems and collaborative delivery.", market:"Affordable Housing", delivery:"Design-Build", services:"Structural Engineering", systems:"Wood + Concrete", image:"mercy-aviva.png", alt:"Mercy Aviva Crossing exterior" },
       hilltop: { title:"Housing Hilltop", client:"Tacoma Housing Authority", description:"Two new affordable housing buildings delivered through close design-build collaboration with SMR Architects and Walsh Construction.", market:"Affordable Housing", delivery:"Design-Build", services:"Structural Engineering", systems:"Wood + Concrete", image:"housing-hilltop.png", alt:"Housing Hilltop exterior" },
-      prisma: { title:"Prisma Apartments", client:"Prisma Properties", description:"A mixed-use residential project designed to support an active neighborhood with efficient, resilient structural systems.", market:"Mixed-Use Housing", delivery:"Design-Bid-Build", services:"Structural + Seismic Design", systems:"Concrete + Steel", image:"prisma-apartments.png", alt:"Prisma Apartments exterior" },
-      mercy: { title:"Mercy Aviva Crossing", client:"Mercy Housing Northwest", description:"Affordable housing in Seattle that pairs welcoming community space with durable systems and collaborative delivery.", market:"Affordable Housing", delivery:"Design-Build", services:"Structural Engineering", systems:"Wood + Concrete", image:"mercy-aviva.png", alt:"Mercy Aviva Crossing exterior" }
+      prisma: { title:"Prisma Apartments", client:"Prisma Properties", description:"A mixed-use residential project designed to support an active neighborhood with efficient, resilient structural systems.", market:"Mixed-Use Housing", delivery:"Design-Bid-Build", services:"Structural + Seismic Design", systems:"Concrete + Steel", image:"prisma-apartments.png", alt:"Prisma Apartments exterior" }
     };
     const projectOrder = Object.keys(projects); let activeProject = 0;
     document.querySelector("#next-project").addEventListener("click", () => {
