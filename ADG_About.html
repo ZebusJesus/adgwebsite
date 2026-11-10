@@ -18,8 +18,9 @@
     .nav-shell { display:flex; align-items:center; justify-content:space-between; max-width:var(--max); min-height:5.4rem; margin:auto; padding:0 2rem; }
     .logo { display:flex; align-items:center; gap:.65rem; color:inherit; font-size:.8rem; font-weight:700; letter-spacing:.03em; text-decoration:none; text-transform:uppercase; }
     .logo img { display:block; width:10.5rem; height:3.85rem; object-fit:cover; object-position:50% 47%; mix-blend-mode:multiply; }
-    .nav-list { display:flex; align-items:center; gap:2rem; margin:0; padding:0; list-style:none; font-size:.75rem; font-weight:700; }
+    .nav-list { display:flex; align-items:center; gap:2rem; margin:0; padding:0; list-style:none; font-size:1rem; font-weight:700; }
     .nav-list a { color:inherit; text-decoration:none; }
+    .nav-list .button { font-size:inherit; }
     .nav-list a:hover, .nav-list a:focus-visible { color:var(--teal); }
     .button { display:inline-flex; align-items:center; justify-content:center; min-height:2.8rem; padding:.8rem 1.5rem; border:1px solid transparent; border-radius:99px; color:#fff; background:var(--navy); font-size:.75rem; font-weight:700; letter-spacing:.02em; text-decoration:none; text-transform:uppercase; cursor:pointer; transition:transform .2s, background .2s, color .2s; }
     .button:hover, .button:focus-visible { color:#fff; background:var(--teal); outline:none; transform:translateY(-2px); }
@@ -36,9 +37,19 @@
     .section { padding:clamp(4rem,8vw,8rem) 2rem; }
     .section-title { max-width:46rem; margin-bottom:1rem; font-size:clamp(2.1rem,4vw,4.25rem); line-height:1; letter-spacing:-.05em; }
     .section-intro { max-width:41rem; color:var(--muted); font-size:1.05rem; line-height:1.55; }
+    .who { background:#fff; }
+    .who-grid { display:grid; grid-template-columns:1.1fr .9fr; gap:clamp(2rem,6vw,6rem); align-items:start; }
+    .who-text { max-width:41rem; color:var(--muted); font-size:1.15rem; line-height:1.65; }
+    .philosophy { margin:0; padding:2rem; color:#fff; background:var(--navy); border-left:6px solid var(--teal); font-size:clamp(1.35rem,2.4vw,2rem); font-weight:700; line-height:1.2; }
+    .philosophy small { display:block; margin-bottom:1rem; color:var(--teal); font-size:.75rem; letter-spacing:.08em; text-transform:uppercase; }
+    .partners { display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; margin-top:3.5rem; }
+    .partner { padding:1.5rem; border-top:3px solid var(--teal); background:var(--cream); }
+    .partner h3 { margin:0 0 .5rem; color:var(--navy); font-size:1.1rem; }
+    .partner p { margin:0; color:var(--muted); line-height:1.5; }
+    @media (max-width:850px) { .who-grid, .partners { grid-template-columns:1fr; } }
     .about { background:var(--cream); }
     .about-copy { max-width:58rem; }
-    .value-list { display:grid; gap:1.05rem; margin:2.5rem 0 0; padding:0; list-style:none; font-size:.8rem; font-weight:700; }
+    .value-list { display:grid; gap:1.05rem; margin:2.5rem 0 0; padding:0; list-style:none; font-size:1rem; font-weight:700; }
     .value-list li::before { content:"•"; margin-right:.8rem; color:var(--teal); }
     .expertise { color:#fff; background:var(--navy); }
     .expertise-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; }
@@ -74,7 +85,7 @@
       <a class="logo" href="./index.html#home" aria-label="Atlas Design Group home"><img src="./adg-website-assets/AtlasLogo.png" alt="Atlas Design Group"></a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">Menu</button>
       <nav id="primary-navigation" class="nav-list" aria-label="Primary navigation">
-        <a href="./ADG_Projects.html">Projects</a><a href="#expertise">Expertise</a><a href="#about">About</a><a href="./ADG_Team.html">Meet the team</a><a class="button button--outline" href="mailto:chris.padin@adg-inc.com">Start a project</a>
+        <a href="./ADG_Projects.html">Projects</a><a href="./ADG_Expertise.html">Expertise</a><a href="./ADG_About.html" aria-current="page">About</a><a href="./ADG_Team.html">Meet the team</a><a class="button button--outline" href="mailto:chris.padin@adg-inc.com">Start a project</a>
       </nav>
     </div>
   </header>
@@ -85,6 +96,24 @@
         <p class="eyebrow">Our firm</p>
         <h1 id="about-page-title">Technical excellence, grounded in service.</h1>
         <p class="hero-copy">Atlas Design Group brings structural, seismic design, BIM, and construction expertise together to help housing and community-serving projects move forward with clarity.</p>
+      </div>
+    </section>
+
+    <section class="section who" aria-labelledby="who-title">
+      <div class="section-inner">
+        <div class="who-grid">
+          <div>
+            <p class="section-label">Who we are</p>
+            <h2 id="who-title" class="section-title">Engineers focused on making a difference.</h2>
+            <p class="who-text">We are a team of structural engineers, collaborators, advocates, and innovators focused on making a difference. At Atlas Design Group we specialize in projects that matter. We partner with developers, contractors, and architects that want to create positive change in their communities.</p>
+          </div>
+          <blockquote class="philosophy"><small>Our core philosophy</small>Exceptional quality work, with even better service.<br>Be Better!</blockquote>
+        </div>
+        <div class="partners" aria-label="Who we partner with">
+          <div class="partner"><h3>Developers</h3><p>Practical engineering that keeps housing and community projects on budget and on schedule.</p></div>
+          <div class="partner"><h3>Contractors</h3><p>Clear, buildable solutions and responsive support from preconstruction through the field.</p></div>
+          <div class="partner"><h3>Architects</h3><p>Early, collaborative coordination so structure supports the design vision.</p></div>
+        </div>
       </div>
     </section>
 
@@ -103,27 +132,6 @@
       </div>
     </section>
 
-    <section id="expertise" class="section expertise" aria-labelledby="expertise-title">
-      <div class="section-inner">
-        <div class="expertise-grid">
-          <div class="expertise-copy">
-            <p class="section-label">Expertise</p>
-            <h2 id="expertise-title" class="section-title">Engineering that moves the whole project forward.</h2>
-            <p class="section-intro">We solve for structure, site, budget, schedule and construction—not in isolation, but as one coordinated design challenge.</p>
-          </div>
-          <div class="expertise-links" aria-label="Expertise areas">
-            <button class="expertise-link" type="button" data-service="Affordable and supportive housing brings a deep understanding of program requirements, funding constraints, and durable systems."><span>01</span>Affordable + Supportive Housing</button>
-            <button class="expertise-link" type="button" data-service="Multifamily and mixed-use projects require coordinated systems that deliver efficient, adaptable spaces."><span>02</span>Multifamily + Mixed-Use</button>
-            <button class="expertise-link" type="button" data-service="Our seismic and adaptive-reuse practice helps existing buildings serve their communities for decades longer."><span>03</span>Seismic + Adaptive Reuse</button>
-            <button class="expertise-link" type="button" data-service="Mass timber and wood structures pair warm, efficient materials with practical constructability."><span>04</span>Mass Timber + Wood</button>
-            <button class="expertise-link" type="button" data-service="Community projects balance welcoming spaces with resilient, long-term performance."><span>05</span>Community Projects</button>
-            <button class="expertise-link" type="button" data-service="Construction engineering supports teams with clear, timely technical decisions in the field."><span>06</span>Construction Engineering</button>
-          </div>
-        </div>
-        <p class="quote" id="expertise-message" aria-live="polite">“Good engineering is not only technically correct. It is clear, collaborative and buildable.”</p>
-      </div>
-    </section>
-
     <section class="contact" aria-label="Contact us"><a class="button" href="mailto:chris.padin@adg-inc.com">Start a conversation</a></section>
   </main>
   <footer><span>Atlas Design Group</span><span>Structural + Seismic Design</span><span>Seattle, Washington · adg-inc.com</span></footer>
@@ -131,7 +139,6 @@
     const nav = document.querySelector(".nav-list"), toggle = document.querySelector(".menu-toggle");
     toggle.addEventListener("click", () => { const open = nav.classList.toggle("is-open"); toggle.setAttribute("aria-expanded", open); toggle.textContent = open ? "Close" : "Menu"; });
     nav.querySelectorAll("a").forEach(link => link.addEventListener("click", () => { nav.classList.remove("is-open"); toggle.setAttribute("aria-expanded", "false"); toggle.textContent = "Menu"; }));
-    document.querySelectorAll(".expertise-link").forEach(link => link.addEventListener("click", () => document.querySelector("#expertise-message").textContent = link.dataset.service));
   </script>
 </body>
 </html>
