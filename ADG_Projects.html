@@ -46,6 +46,13 @@
     .project-type { margin:0 0 .4rem; color:var(--teal); font-size:.6rem; font-weight:700; letter-spacing:.07em; text-transform:uppercase; }
     .project-card h3 { margin:0 0 .4rem; font-size:1.05rem; line-height:1; letter-spacing:-.035em; }
     .project-card p { margin:0; color:var(--muted); font-size:.75rem; line-height:1.35; }
+    .filters { display:flex; flex-wrap:wrap; gap:.5rem; margin-bottom:1.5rem; }
+    .filter-btn { min-height:2.4rem; padding:.55rem 1.1rem; border:1px solid var(--navy); border-radius:99px; color:var(--navy); background:transparent; font:700 .7rem Arial, Helvetica, sans-serif; letter-spacing:.04em; text-transform:uppercase; cursor:pointer; transition:background .2s, color .2s; }
+    .filter-btn:hover, .filter-btn:focus-visible { color:var(--teal); border-color:var(--teal); outline:none; }
+    .filter-btn[aria-pressed="true"] { color:#fff; border-color:var(--navy); background:var(--navy); }
+    .project-grid.is-filtered .project-card--featured { grid-column:auto; }
+    .project-grid.is-filtered .project-card--featured .project-image { aspect-ratio:auto; }
+    .project-card[hidden] { display:none; }
     .contact { display:flex; justify-content:center; padding:2.5rem 1.5rem; background:var(--cream); }
     footer { display:flex; justify-content:space-between; gap:1rem; padding:1.4rem 2rem; color:#fff; background:var(--navy-dark); font-size:.7rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; }
     @media (max-width:850px) {
@@ -94,6 +101,7 @@
         <div><p class="eyebrow">Our portfolio</p><h2 id="selected-projects-title">Practical rigor for complex work.</h2></div>
         <p>Every project reflects our approach: clear coordination, durable systems, and engineering that supports the people who use and build the work.</p>
       </div>
+      <div class="filters" role="group" aria-label="Filter projects by type"></div>
       <div class="project-grid">
         <article class="project-card project-card--featured">
           <img class="project-image" src="adg-website-assets/housing-hilltop.png" alt="Rendering of Housing Hilltop">
@@ -178,6 +186,32 @@
     toggle.addEventListener("click", () => { const open = nav.classList.toggle("is-open"); toggle.setAttribute("aria-expanded", open); toggle.textContent = open ? "Close" : "Menu"; });
     nav.querySelectorAll("a").forEach(link => link.addEventListener("click", () => { nav.classList.remove("is-open"); toggle.setAttribute("aria-expanded", "false"); toggle.textContent = "Menu"; }));
 
+    const grid = document.querySelector(".project-grid"), filterBar = document.querySelector(".filters");
+    const cards = [...grid.querySelectorAll(".project-card")];
+    const categoryOf = type => {
+      const t = type.toLowerCase();
+      if (t.includes("mixed-use")) return "Mixed-use";
+      if (t.includes("education")) return "Education";
+      if (t.includes("healthcare")) return "Healthcare";
+      if (t.includes("adaptive") || t.includes("seismic")) return "Adaptive reuse & seismic";
+      if (t.includes("housing") || t.includes("multifamily")) return "Housing";
+      return "Community";
+    };
+    cards.forEach(card => { card.dataset.category = categoryOf(card.querySelector(".project-type").textContent); });
+    const categories = ["All", ...["Housing", "Mixed-use", "Education", "Community", "Healthcare", "Adaptive reuse & seismic"].filter(c => cards.some(card => card.dataset.category === c))];
+    categories.forEach(name => {
+      const btn = document.createElement("button");
+      btn.type = "button"; btn.className = "filter-btn"; btn.textContent = name; btn.dataset.filter = name;
+      btn.setAttribute("aria-pressed", name === "All");
+      filterBar.appendChild(btn);
+    });
+    filterBar.addEventListener("click", e => {
+      const btn = e.target.closest(".filter-btn"); if (!btn) return;
+      const f = btn.dataset.filter;
+      filterBar.querySelectorAll(".filter-btn").forEach(b => b.setAttribute("aria-pressed", b === btn));
+      grid.classList.toggle("is-filtered", f !== "All");
+      cards.forEach(card => { card.hidden = f !== "All" && card.dataset.category !== f; });
+    });
   </script>
 </body>
 </html>
