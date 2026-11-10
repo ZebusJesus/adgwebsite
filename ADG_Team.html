@@ -12,11 +12,13 @@
     .site-header { color:var(--navy); background:var(--cream); border-bottom:1px solid rgb(20 32 74 / 10%); }
     .nav-shell { display:flex; align-items:center; justify-content:space-between; max-width:var(--max); min-height:5.4rem; margin:auto; padding:0 2rem; }
     .logo { display:flex; align-items:center; gap:.65rem; color:inherit; font-size:.8rem; font-weight:700; letter-spacing:.03em; text-decoration:none; text-transform:uppercase; }
-    .logo-mark { display:grid; width:2rem; height:2rem; place-items:center; border:1px solid currentColor; border-radius:50%; font-size:.5rem; }
+    .logo img { display:block; width:10.5rem; height:3.85rem; object-fit:cover; object-position:50% 47%; mix-blend-mode:multiply; }
     .nav-list { display:flex; align-items:center; gap:2rem; margin:0; padding:0; list-style:none; font-size:.75rem; font-weight:700; }
     .nav-list a { color:inherit; text-decoration:none; } .nav-list a:hover, .nav-list a:focus-visible { color:var(--teal); }
     .button { display:inline-flex; align-items:center; justify-content:center; min-height:2.8rem; padding:.8rem 1.5rem; border:1px solid var(--navy); border-radius:99px; color:#fff; background:var(--navy); font-size:.75rem; font-weight:700; letter-spacing:.02em; text-decoration:none; text-transform:uppercase; transition:transform .2s,background .2s; }
     .button:hover,.button:focus-visible { background:var(--teal); border-color:var(--teal); outline:none; transform:translateY(-2px); }
+    .button--outline, .nav-list a.button--outline { color:var(--navy); border-color:var(--navy); background:transparent; }
+    .nav-list a.button--outline:hover, .nav-list a.button--outline:focus-visible { color:var(--teal); border-color:var(--teal); background:transparent; }
     .menu-toggle { display:none; border:0; color:var(--navy); background:transparent; font-size:1.5rem; cursor:pointer; }
     .hero { padding:clamp(5rem,10vw,9rem) 2rem 4rem; color:#fff; background:var(--navy); } .hero-inner,.team,.cta-inner { width:min(var(--max),100%); margin:auto; }
     .eyebrow { margin:0 0 .8rem; color:var(--teal); font-size:.75rem; font-weight:700; letter-spacing:.07em; text-transform:uppercase; }
@@ -25,7 +27,7 @@
     .team { padding:clamp(3rem,6vw,6.5rem) 2rem; } .intro { display:flex; align-items:end; justify-content:space-between; gap:2rem; margin-bottom:3rem; }
     .intro h2 { max-width:33rem; margin:0; font-size:clamp(1.8rem,3.5vw,3.5rem); line-height:1; letter-spacing:-.05em; } .intro p { max-width:29rem; margin:0; color:var(--muted); font-size:.95rem; line-height:1.5; }
     .team-groups { display:grid; gap:3.8rem; } .team-group { padding-top:1.1rem; border-top:2px solid var(--navy); } .team-group-header { display:flex; align-items:baseline; justify-content:space-between; gap:1rem; margin-bottom:1.3rem; } .team-group-header h3 { margin:0; font-size:1.2rem; letter-spacing:.06em; text-transform:uppercase; } .team-group-header span { color:var(--teal); font-size:.72rem; font-weight:700; letter-spacing:.07em; text-transform:uppercase; }
-    .team-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.2rem; } .member { overflow:hidden; border:3px solid var(--navy); background:#fff; } .member-image { display:block; width:100%; aspect-ratio:1 / 1.08; object-fit:cover; object-position:center top; filter:saturate(.88); transition:filter .25s,transform .25s; } .member:hover .member-image { filter:saturate(1); transform:scale(1.025); }
+    .team-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.2rem; } .member { overflow:hidden; border:3px solid var(--navy); background:#fff; } .member-image { display:block; width:100%; aspect-ratio:1 / 1.08; object-fit:cover; object-position:50% 47%; object-position:center top; filter:saturate(.88); transition:filter .25s,transform .25s; } .member:hover .member-image { filter:saturate(1); transform:scale(1.025); }
     .member-copy { min-height:7.6rem; padding:1.2rem; } .member h3 { margin:0 0 .4rem; font-size:1.2rem; line-height:1.05; letter-spacing:-.025em; } .member p { margin:0; color:var(--muted); font-size:.8rem; font-weight:700; line-height:1.35; text-transform:uppercase; } .member p:empty::after { content:"Atlas Design Group"; color:var(--teal); }
     .cta { padding:clamp(3rem,6vw,6rem) 2rem; color:#fff; background:var(--navy); } .cta-inner { display:flex; align-items:center; justify-content:space-between; gap:2rem; } .cta h2 { max-width:43rem; margin:0; font-size:clamp(1.8rem,3.6vw,3.7rem); line-height:1; letter-spacing:-.05em; }
     footer { display:flex; justify-content:space-between; gap:1rem; padding:1.4rem 2rem; color:#fff; background:#0b1330; font-size:.7rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; }
@@ -36,12 +38,12 @@
 <body>
   <a class="skip-link" href="#team">Skip to team</a>
   <header class="site-header"><div class="nav-shell">
-    <a class="logo" href="./index.html#home" aria-label="Atlas Design Group home"><span class="logo-mark" aria-hidden="true">ADG</span><span>Atlas Design Group</span></a>
+    <a class="logo" href="./index.html#home" aria-label="Atlas Design Group home"><img src="./adg-website-assets/AtlasLogo.png" alt="Atlas Design Group"></a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">Menu</button>
-    <nav id="primary-navigation" class="nav-list" aria-label="Primary navigation"><a href="./ADG_Projects.html">Projects</a><a href="./ADG_About.html#expertise">Expertise</a><a href="./ADG_About.html#about">About</a><a href="#team" aria-current="page">Meet the team</a><a class="button" href="mailto:chris.padin@adg-inc.com">Start a project</a></nav>
+    <nav id="primary-navigation" class="nav-list" aria-label="Primary navigation"><a href="./ADG_Projects.html">Projects</a><a href="./ADG_About.html#expertise">Expertise</a><a href="./ADG_About.html#about">About</a><a href="#team" aria-current="page">Meet the team</a><a class="button button--outline" href="mailto:chris.padin@adg-inc.com">Start a project</a></nav>
   </div></header>
   <main>
-    <section class="hero" aria-labelledby="team-page-title"><div class="hero-inner"><p class="eyebrow">Our firm</p><h1 id="team-page-title">The people behind the work.</h1><p>Atlas Design Group brings structural, civil, and construction expertise together with a shared commitment to the communities we serve.</p></div></section>
+    <section class="hero" aria-labelledby="team-page-title"><div class="hero-inner"><p class="eyebrow">Our firm</p><h1 id="team-page-title">The people behind the work.</h1><p>Atlas Design Group brings structural, seismic design, and construction expertise together with a shared commitment to the communities we serve.</p></div></section>
     <section id="team" class="team" aria-labelledby="team-title"><div class="intro"><div><p class="eyebrow">The Atlas team</p><h2 id="team-title">Principal-level attention at every level.</h2></div><p>Meet the engineers, designers, and operations staff who bring practical creativity and technical rigor to every project.</p></div>
       <div class="team-groups">
       <section class="team-group" aria-labelledby="leadership-title"><div class="team-group-header"><h3 id="leadership-title">Leadership + Operations</h3><span>03 people</span></div><div class="team-grid">
@@ -71,7 +73,7 @@
     </section>
     <section class="cta"><div class="cta-inner"><div><p class="eyebrow">Let's build something that matters</p><h2>Bring us your next challenge.</h2></div><a class="button" href="mailto:chris.padin@adg-inc.com">Start a project</a></div></section>
   </main>
-  <footer><span>Atlas Design Group</span><span>Structural + Civil Engineering</span><span>Seattle, Washington · adg-inc.com</span></footer>
+  <footer><span>Atlas Design Group</span><span>Structural + Seismic Design</span><span>Seattle, Washington · adg-inc.com</span></footer>
   <script>
     const nav = document.querySelector(".nav-list"), toggle = document.querySelector(".menu-toggle");
     toggle.addEventListener("click", () => { const open = nav.classList.toggle("is-open"); toggle.setAttribute("aria-expanded", open); toggle.textContent = open ? "Close" : "Menu"; });

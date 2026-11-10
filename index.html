@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Atlas Design Group structural and civil engineering.">
-  <title>Atlas Design Group | Structural + Civil Engineering</title>
+  <meta name="description" content="Atlas Design Group structural engineering and seismic design.">
+  <title>Atlas Design Group | Structural + Seismic Design</title>
   <style>
     :root { --navy:#172552; --navy-dark:#0b1330; --cream:#f4f1ea; --teal:#15bebc; --ink:#14204a; --muted:#697088; --white:#fff; --line:#dfe1e7; --max:1380px; }
     * { box-sizing:border-box; }
@@ -15,9 +15,9 @@
     .skip-link { position:absolute; z-index:20; top:-4rem; left:1rem; padding:.75rem 1rem; color:#fff; background:var(--navy); }
     .skip-link:focus { top:1rem; }
     .site-header { position:absolute; z-index:10; top:0; left:0; width:100%; color:#fff; }
-    .nav-shell { display:flex; align-items:center; justify-content:space-between; max-width:var(--max); min-height:5.4rem; margin:auto; padding:0 2rem; }
+    .nav-shell { display:flex; align-items:center; justify-content:space-between; max-width:none; min-height:5.4rem; margin:0; padding:0 2rem 0 10rem; }
     .logo { display:flex; align-items:center; gap:.65rem; color:inherit; font-size:.8rem; font-weight:700; letter-spacing:.03em; text-decoration:none; text-transform:uppercase; }
-    .logo-mark { display:grid; width:2rem; height:2rem; place-items:center; border:1px solid currentColor; border-radius:50%; font-size:.5rem; }
+    .logo img { display:block; width:10.5rem; height:3.85rem; padding:.2rem .5rem; border-radius:.4rem; background:#fff; object-fit:cover; object-position:50% 47%; }
     .nav-list { display:flex; align-items:center; gap:2rem; margin:0; padding:0; list-style:none; font-size:.75rem; font-weight:700; }
     .nav-list a { color:inherit; text-decoration:none; }
     .nav-list a:hover, .nav-list a:focus-visible { color:var(--teal); }
@@ -89,7 +89,7 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="nav-shell">
-      <a class="logo" href="#home" aria-label="Atlas Design Group home"><span class="logo-mark" aria-hidden="true">ADG</span><span>Atlas Design Group</span></a>
+      <a class="logo" href="#home" aria-label="Atlas Design Group home"><img src="adg-website-assets/AtlasLogo.png" alt="Atlas Design Group"></a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">Menu</button>
       <nav id="primary-navigation" class="nav-list" aria-label="Primary navigation">
         <a href="ADG_Projects.html">Projects</a><a href="ADG_About.html#expertise">Expertise</a><a href="ADG_About.html#about">About</a><a href="ADG_Team.html">Meet the team</a><a class="button button--outline" href="mailto:chris.padin@adg-inc.com">Start a project</a>
@@ -100,7 +100,7 @@
   <main id="main">
     <section id="home" class="hero" aria-labelledby="hero-title">
       <div class="hero-inner">
-        <p class="eyebrow">Structural + Civil Engineering</p>
+        <p class="eyebrow">Structural + Seismic Design</p>
         <h1 id="hero-title">Engineering buildings that strengthen communities.</h1>
         <p class="hero-copy">Responsive partners. Inventive solutions. Technical rigor from concept through construction.</p>
       </div>
@@ -123,8 +123,8 @@
         </div>
         <div class="service-cards" role="tablist" aria-label="Engineering disciplines">
           <button class="service-card is-active" type="button" role="tab" aria-selected="true" data-detail="Structural engineering for wood, mass timber, concrete, steel, masonry, seismic retrofit, and construction engineering."><small>Structural</small><h3>Structures that work harder.</h3><p>Wood, mass timber, concrete, steel, masonry, seismic retrofit and construction engineering.</p></button>
-          <button class="service-card" type="button" role="tab" aria-selected="false" data-detail="Civil engineering integrates grading, utilities, stormwater, access, and permitting from the earliest project decisions."><small>Civil</small><h3>Sites designed for connection.</h3><p>Thoughtful grading, utilities, stormwater, access and permitting—coordinated from day one.</p></button>
-          <button class="service-card" type="button" role="tab" aria-selected="false" data-detail="Specialty engineering helps teams deliver seismic evaluation, adaptive reuse, temporary structures, and design-build work with clarity."><small>Specialty</small><h3>Complexity made buildable.</h3><p>Seismic evaluation, adaptive reuse, temporary structures and design-build collaboration.</p></button>
+          <button class="service-card" type="button" role="tab" aria-selected="false" data-detail="Seismic design brings evaluation, retrofit, and code-compliant lateral systems into the earliest project decisions."><small>Seismic</small><h3>Built to withstand the unexpected.</h3><p>Seismic evaluation, retrofit and lateral system design—coordinated from day one.</p></button>
+          <button class="service-card" type="button" role="tab" aria-selected="false" data-detail="Shoring design supports safe excavations and temporary structures, with engineered solutions coordinated with the construction team."><small>Shoring</small><h3>Support where it counts.</h3><p>Excavation shoring, underpinning, temporary structures and construction-phase engineering.</p></button>
         </div>
         <p id="service-detail" class="service-detail" aria-live="polite">Structural engineering for wood, mass timber, concrete, steel, masonry, seismic retrofit, and construction engineering.</p>
         <div class="collaboration"><div><p class="section-label">Built for collaboration</p><h3>Our process makes engineering visible, understandable, and useful to the entire project team.</h3></div><a class="button button--dark" href="ADG_Team.html">Meet the team</a></div>
@@ -143,7 +143,7 @@
 
     <section id="contact" class="contact" aria-label="Contact us"><a class="button" href="mailto:chris.padin@adg-inc.com">Start a conversation</a></section>
   </main>
-  <footer><span>Atlas Design Group</span><span>Structural + Civil Engineering</span><span>Seattle, Washington · adg-inc.com</span></footer>
+  <footer><span>Atlas Design Group</span><span>Structural + Seismic Design</span><span>Seattle, Washington · adg-inc.com</span></footer>
   <script>
     const nav = document.querySelector(".nav-list");
     const menuToggle = document.querySelector(".menu-toggle");
@@ -152,7 +152,7 @@
 
     const projects = {
       hilltop: { title:"Housing Hilltop", client:"Tacoma Housing Authority", description:"Two new affordable housing buildings delivered through close design-build collaboration with SMR Architects and Walsh Construction.", market:"Affordable Housing", delivery:"Design-Build", services:"Structural Engineering", systems:"Wood + Concrete", image:"housing-hilltop.png", alt:"Housing Hilltop exterior" },
-      prisma: { title:"Prisma Apartments", client:"Prisma Properties", description:"A mixed-use residential project designed to support an active neighborhood with efficient, resilient structural systems.", market:"Mixed-Use Housing", delivery:"Design-Bid-Build", services:"Structural + Civil Engineering", systems:"Concrete + Steel", image:"prisma-apartments.png", alt:"Prisma Apartments exterior" },
+      prisma: { title:"Prisma Apartments", client:"Prisma Properties", description:"A mixed-use residential project designed to support an active neighborhood with efficient, resilient structural systems.", market:"Mixed-Use Housing", delivery:"Design-Bid-Build", services:"Structural + Seismic Design", systems:"Concrete + Steel", image:"prisma-apartments.png", alt:"Prisma Apartments exterior" },
       mercy: { title:"Mercy Aviva Crossing", client:"Mercy Housing Northwest", description:"Affordable housing in Seattle that pairs welcoming community space with durable systems and collaborative delivery.", market:"Affordable Housing", delivery:"Design-Build", services:"Structural Engineering", systems:"Wood + Concrete", image:"mercy-aviva.png", alt:"Mercy Aviva Crossing exterior" }
     };
     const projectOrder = Object.keys(projects); let activeProject = 0;
