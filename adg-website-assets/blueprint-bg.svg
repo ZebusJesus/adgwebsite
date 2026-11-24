@@ -1,27 +1,99 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
   <defs>
-    <pattern id="minor" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#2f5fa8" stroke-width=".5"/></pattern>
-    <pattern id="major" width="100" height="100" patternUnits="userSpaceOnUse"><rect width="100" height="100" fill="url(#minor)"/><path d="M100 0H0V100" fill="none" stroke="#2f5fa8" stroke-width="1.2"/></pattern>
+    <pattern id="grid" width="25" height="25" patternUnits="userSpaceOnUse">
+      <path d="M25 0H0V25" fill="none" stroke="#7193bd" stroke-width=".45"/>
+    </pattern>
+    <pattern id="grid-major" width="125" height="125" patternUnits="userSpaceOnUse">
+      <rect width="125" height="125" fill="url(#grid)"/>
+      <path d="M125 0H0V125" fill="none" stroke="#7193bd" stroke-width=".9"/>
+    </pattern>
+    <pattern id="hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <path d="M0 0V10" stroke="#28558c" stroke-width="1"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 8 8" refX="4" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M8 0L0 4L8 8" fill="none" stroke="#28558c" stroke-width="1"/>
+    </marker>
   </defs>
+
   <rect width="1600" height="900" fill="#e6eefa"/>
-  <rect width="1600" height="900" fill="url(#major)"/>
-  <g fill="none" stroke="#1d4a8f" stroke-width="2">
-    <rect x="160" y="140" width="520" height="340"/>
-    <rect x="180" y="160" width="480" height="300" stroke-width="1"/>
-    <path d="M420 140V480M160 310H680M300 140V310M540 310V480"/>
-    <path d="M160 140L420 310M680 140L420 310" stroke-width="1" stroke-dasharray="8 6"/>
-    <circle cx="1050" cy="300" r="140"/>
-    <circle cx="1050" cy="300" r="90" stroke-width="1"/>
-    <path d="M880 300H1220M1050 130V470" stroke-dasharray="14 6 2 6" stroke-width="1"/>
-    <path d="M900 620H1450M900 700H1450M900 620V700M1000 620V700M1100 620V700M1200 620V700M1300 620V700M1400 620V700M1450 620V700"/>
-    <path d="M900 620L1000 700M1000 620L1100 700M1100 620L1200 700M1200 620L1300 700M1300 620L1400 700" stroke-width="1"/>
-    <path d="M200 600H620V760H200ZM200 680H620M410 600V760" stroke-width="1.5"/>
-    <path d="M160 520H680M160 510V530M680 510V530" stroke-width="1"/>
+  <rect width="1600" height="900" fill="url(#grid-major)"/>
+  <rect x="35" y="35" width="1530" height="830" fill="none" stroke="#28558c" stroke-width="1.5"/>
+  <rect x="45" y="45" width="1510" height="810" fill="none" stroke="#28558c" stroke-width=".6"/>
+
+  <!-- Tower crane elevation -->
+  <g fill="none" stroke="#204c83" stroke-linejoin="round" stroke-linecap="round">
+    <g stroke-width="2.5">
+      <path d="M690 318H790V712H690Z"/>
+      <path d="M700 318V712M780 318V712"/>
+      <path d="M690 374H790M690 430H790M690 486H790M690 542H790M690 598H790M690 654H790"/>
+      <path d="M700 318L780 374L700 430L780 486L700 542L780 598L700 654L780 712M780 318L700 374L780 430L700 486L780 542L700 598L780 654L700 712" stroke-width="1.5"/>
+      <path d="M665 304H815V318H665Z"/>
+      <path d="M680 292H800V304H680Z"/>
+      <path d="M690 270L716 180H764L790 270Z"/>
+      <path d="M716 180L740 115L764 180M716 180L764 270M764 180L716 270" stroke-width="1.5"/>
+      <path d="M260 270H1305L1335 292H260Z"/>
+      <path d="M260 270L300 240H670M810 240H1265L1305 270"/>
+      <path d="M300 240L340 270L380 240L420 270L460 240L500 270L540 240L580 270L620 240L660 270M820 240L860 270L900 240L940 270L980 240L1020 270L1060 240L1100 270L1140 240L1180 270L1220 240L1260 270" stroke-width="1.5"/>
+      <path d="M740 115L350 240M740 115L1180 240M740 115L820 240" stroke-width="1.5"/>
+      <path d="M278 292V330H420V292M285 300H413M285 310H413M285 320H413" stroke-width="2"/>
+      <path d="M620 270V292H660V270M620 279H660"/>
+      <path d="M1060 292V304H1100V292M1068 304V470M1092 304V470" stroke-width="1.5"/>
+      <path d="M1060 470H1100L1094 493H1066Z M1074 493V508C1074 520 1090 520 1090 508" stroke-width="2"/>
+      <path d="M665 712H815V725H665Z M635 725H845V747H635Z"/>
+      <path d="M600 747H880V785H600Z"/>
+      <path d="M570 785H910" stroke-width="1"/>
+    </g>
+    <g stroke-width=".8" stroke-dasharray="14 5 2 5">
+      <path d="M740 85V810M235 281H1360"/>
+    </g>
   </g>
-  <g fill="#1d4a8f" font-family="monospace" font-size="14">
-    <text x="165" y="535">48'-0"</text>
-    <text x="900" y="600">SECTION A-A</text>
-    <text x="1000" y="480">DETAIL 3 / S-201</text>
-    <text x="200" y="590">FRAMING PLAN</text>
+  <path d="M600 747H880V785H600Z" fill="url(#hatch)" stroke="#28558c" stroke-width="1.5"/>
+
+  <!-- Dimension lines and drawing callouts -->
+  <g fill="none" stroke="#28558c" stroke-width="1">
+    <path d="M260 225V190M1335 265V190M267 200H1328" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    <path d="M680 318H545M635 785H545M555 325V778" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    <path d="M685 356L620 390H510M805 307L875 345H975M1090 490L1160 520H1260"/>
+    <circle cx="685" cy="356" r="3" fill="#28558c"/>
+    <circle cx="805" cy="307" r="3" fill="#28558c"/>
+    <circle cx="1090" cy="490" r="3" fill="#28558c"/>
+  </g>
+  <g fill="#28558c" font-family="Arial, Helvetica, sans-serif" font-size="12" letter-spacing="1.2">
+    <text x="750" y="190" text-anchor="middle">JIB / COUNTERJIB</text>
+    <text x="544" y="555" text-anchor="middle" transform="rotate(-90 544 555)">MAST ELEVATION</text>
+    <text x="420" y="386">LATTICE MAST</text>
+    <text x="880" y="340">SLEWING ASSEMBLY</text>
+    <text x="1165" y="515">HOOK BLOCK</text>
+    <text x="600" y="820" font-size="16" font-weight="bold">01 / TOWER CRANE ELEVATION</text>
+    <text x="600" y="839" font-size="10">ILLUSTRATIVE SCHEMATIC / NOT TO SCALE</text>
+  </g>
+
+  <!-- Mast section detail -->
+  <g fill="none" stroke="#204c83">
+    <rect x="1150" y="610" width="150" height="150" stroke-width="2"/>
+    <rect x="1162" y="622" width="126" height="126" stroke-width="1"/>
+    <path d="M1162 622L1288 748M1288 622L1162 748" stroke-width="1.5"/>
+    <circle cx="1162" cy="622" r="6" stroke-width="1.5"/>
+    <circle cx="1288" cy="622" r="6" stroke-width="1.5"/>
+    <circle cx="1162" cy="748" r="6" stroke-width="1.5"/>
+    <circle cx="1288" cy="748" r="6" stroke-width="1.5"/>
+    <path d="M1125 685H1325M1225 585V785" stroke-width=".8" stroke-dasharray="12 5 2 5"/>
+    <circle cx="1225" cy="685" r="100" stroke-width=".8" stroke-dasharray="5 5"/>
+  </g>
+  <g fill="#28558c" font-family="Arial, Helvetica, sans-serif" font-size="11" letter-spacing="1">
+    <text x="1140" y="805" font-size="14" font-weight="bold">02 / MAST SECTION</text>
+    <text x="1140" y="824">SCHEMATIC / NOT TO SCALE</text>
+    <text x="95" y="105" font-size="14" font-weight="bold">STRUCTURAL STUDIES</text>
+    <text x="95" y="126">TOWER CRANE / LATTICE FRAME</text>
+  </g>
+  <g fill="none" stroke="#28558c" stroke-width="1">
+    <path d="M95 140H380M95 706H330V810H95Z M95 742H330M95 776H330M235 742V810"/>
+  </g>
+  <g fill="#28558c" font-family="Arial, Helvetica, sans-serif" font-size="10" letter-spacing="1">
+    <text x="110" y="729">STRUCTURAL DRAWING</text>
+    <text x="110" y="763">TOWER CRANE</text>
+    <text x="110" y="797">CONCEPT STUDY</text>
+    <text x="248" y="763">SHEET</text>
+    <text x="248" y="797" font-size="15" font-weight="bold">S-01</text>
   </g>
 </svg>

@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+  <defs>
+    <pattern id="grid" width="25" height="25" patternUnits="userSpaceOnUse">
+      <path d="M25 0H0V25" fill="none" stroke="#7193bd" stroke-width=".45"/>
+    </pattern>
+    <pattern id="major-grid" width="100" height="100" patternUnits="userSpaceOnUse">
+      <rect width="100" height="100" fill="url(#grid)"/>
+      <path d="M100 0H0V100" fill="none" stroke="#7193bd" stroke-width=".8"/>
+    </pattern>
+    <pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <path d="M0 0V8" stroke="#28558c" stroke-width="1"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 8 8" refX="4" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M8 0L0 4L8 8" fill="none" stroke="#28558c" stroke-width="1"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="900" fill="#e6eefa"/>
+  <rect width="1200" height="900" fill="url(#major-grid)"/>
+
+  <g fill="none" stroke="#204c83" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Beam-to-column connection -->
+    <g stroke-width="2">
+      <path d="M445 100H462V410H445ZM538 100H555V410H538Z M462 110H538M462 400H538"/>
+      <path d="M555 185H895V202H555M555 318H895V335H555M555 202H895M555 318H895"/>
+      <path d="M565 210H615V310H565Z"/>
+      <path d="M575 210V310M605 210V310" stroke-width="1"/>
+      <circle cx="590" cy="228" r="6"/><circle cx="590" cy="260" r="6"/><circle cx="590" cy="292" r="6"/>
+      <path d="M462 260H538M445 260H415" stroke-width="1"/>
+    </g>
+    <g stroke-width=".8" stroke-dasharray="14 5 2 5">
+      <path d="M500 75V435M415 260H920"/>
+    </g>
+    <g stroke-width="1">
+      <path d="M555 175V145M895 175V145M565 155H885" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+      <path d="M430 100H395M430 410H395M405 110V400" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+      <path d="M608 225L655 115H735M830 202L925 140H1010M462 350L390 390H305"/>
+      <circle cx="608" cy="225" r="3" fill="#204c83"/><circle cx="830" cy="202" r="3" fill="#204c83"/><circle cx="462" cy="350" r="3" fill="#204c83"/>
+    </g>
+
+    <!-- Wide-flange section -->
+    <g stroke-width="2">
+      <path d="M135 165H255V180H205V290H255V305H135V290H185V180H135Z"/>
+      <path d="M145 180H185M205 180H245M145 290H185M205 290H245" stroke-width="1"/>
+      <path d="M195 140V330M110 235H280" stroke-width=".8" stroke-dasharray="14 5 2 5"/>
+      <path d="M120 165H100M120 305H100M110 175V295M135 320V340M255 320V340M145 330H245" stroke-width="1" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    </g>
+
+    <!-- Base plate detail -->
+    <g stroke-width="2">
+      <path d="M760 560H840V690H760Z M770 560V690M830 560V690"/>
+      <path d="M720 690H880V705H720Z M690 705H910V790H690Z"/>
+      <path d="M740 675V740M860 675V740M730 675H750M850 675H870M735 740H745M855 740H865" stroke-width="1.5"/>
+      <path d="M710 760H890M720 775H880" stroke-width="1"/>
+      <path d="M680 790H920" stroke-width="1"/>
+      <path d="M800 535V815" stroke-width=".8" stroke-dasharray="14 5 2 5"/>
+      <path d="M740 688L670 635H590M862 708L925 650H1010" stroke-width="1"/>
+      <circle cx="740" cy="688" r="3" fill="#204c83"/><circle cx="862" cy="708" r="3" fill="#204c83"/>
+    </g>
+  </g>
+  <path d="M690 705H910V790H690Z" fill="url(#hatch)" opacity=".55"/>
+
+  <!-- Bolted plate detail -->
+  <g fill="none" stroke="#204c83" stroke-width="2">
+    <rect x="170" y="550" width="210" height="190"/>
+    <rect x="185" y="565" width="180" height="160" stroke-width="1"/>
+    <circle cx="215" cy="595" r="9"/><circle cx="275" cy="595" r="9"/><circle cx="335" cy="595" r="9"/>
+    <circle cx="215" cy="645" r="9"/><circle cx="275" cy="645" r="9"/><circle cx="335" cy="645" r="9"/>
+    <circle cx="215" cy="695" r="9"/><circle cx="275" cy="695" r="9"/><circle cx="335" cy="695" r="9"/>
+    <path d="M145 645H405M275 525V765" stroke-width=".8" stroke-dasharray="14 5 2 5"/>
+    <path d="M170 750V780M380 750V780M180 770H370" stroke-width="1" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  </g>
+
+  <g fill="#28558c" font-family="Arial, Helvetica, sans-serif" letter-spacing="1">
+    <g font-size="11">
+      <text x="660" y="110">CONNECTION PLATE</text>
+      <text x="930" y="135">STEEL BEAM</text>
+      <text x="235" y="385">STEEL COLUMN</text>
+      <text x="530" y="630">ANCHOR ROD</text>
+      <text x="930" y="645">BASE PLATE</text>
+    </g>
+    <g font-size="13" font-weight="bold">
+      <text x="120" y="370">01 / WIDE-FLANGE SECTION</text>
+      <text x="445" y="455">02 / BEAM-TO-COLUMN CONNECTION</text>
+      <text x="170" y="810">03 / BOLTED PLATE</text>
+      <text x="690" y="835">04 / COLUMN BASE</text>
+    </g>
+    <g font-size="10">
+      <text x="120" y="388">ILLUSTRATIVE / NOT TO SCALE</text>
+      <text x="445" y="473">ILLUSTRATIVE / NOT TO SCALE</text>
+      <text x="170" y="828">ILLUSTRATIVE / NOT TO SCALE</text>
+      <text x="690" y="853">ILLUSTRATIVE / NOT TO SCALE</text>
+    </g>
+  </g>
+</svg>
