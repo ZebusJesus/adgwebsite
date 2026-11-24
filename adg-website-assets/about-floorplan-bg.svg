@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+  <defs>
+    <pattern id="grid" width="25" height="25" patternUnits="userSpaceOnUse">
+      <path d="M25 0H0V25" fill="none" stroke="#7193bd" stroke-width=".45"/>
+    </pattern>
+    <pattern id="major-grid" width="100" height="100" patternUnits="userSpaceOnUse">
+      <rect width="100" height="100" fill="url(#grid)"/>
+      <path d="M100 0H0V100" fill="none" stroke="#7193bd" stroke-width=".8"/>
+    </pattern>
+    <marker id="tick" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M2 8L8 2" fill="none" stroke="#28558c" stroke-width="1"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="900" fill="#e6eefa"/>
+  <rect width="1200" height="900" fill="url(#major-grid)"/>
+
+  <!-- Exterior and interior walls -->
+  <g fill="none" stroke="#204c83" stroke-linejoin="miter">
+    <g stroke-width="8">
+      <path d="M180 140H1030V730H600M520 730H180V140"/>
+      <path d="M500 140V265M500 330V525M500 590V730"/>
+      <path d="M180 400H330M395 400H500"/>
+      <path d="M500 360H700M765 360H1030"/>
+      <path d="M500 560H690M755 560H1030"/>
+      <path d="M815 140V270M815 330V360"/>
+    </g>
+    <g stroke-width="1.5">
+      <path d="M192 152H1018V718H600M520 718H192V152"/>
+      <path d="M488 152V265M488 330V525M488 590V718"/>
+      <path d="M192 388H330M395 388H488"/>
+      <path d="M512 348H700M765 348H1018M512 548H690M755 548H1018"/>
+      <path d="M803 152V270M803 330V348"/>
+    </g>
+  </g>
+
+  <!-- Door leaves and swing arcs -->
+  <g fill="none" stroke="#28558c" stroke-width="1.5">
+    <path d="M520 730V650M520 650A80 80 0 0 1 600 730"/>
+    <path d="M330 400V335M330 335A65 65 0 0 1 395 400"/>
+    <path d="M500 265H565M565 265A65 65 0 0 1 500 330"/>
+    <path d="M500 525H565M565 525A65 65 0 0 1 500 590"/>
+    <path d="M700 360V295M700 295A65 65 0 0 1 765 360"/>
+    <path d="M690 560V495M690 495A65 65 0 0 1 755 560"/>
+    <path d="M815 270H875M875 270A60 60 0 0 1 815 330"/>
+  </g>
+
+  <!-- Windows -->
+  <g fill="#e6eefa" stroke="#28558c" stroke-width="1.5">
+    <path d="M235 134H405V158H235Z M575 134H750V158H575Z M865 134H975V158H865Z"/>
+    <path d="M174 200H198V325H174Z M174 470H198V605H174Z M1012 420H1036V505H1012Z M1012 600H1036V680H1012Z"/>
+    <path d="M240 712H405V736H240Z M815 712H960V736H815Z"/>
+    <path d="M235 146H405M575 146H750M865 146H975M186 200V325M186 470V605M1024 420V505M1024 600V680M240 724H405M815 724H960"/>
+  </g>
+
+  <!-- Fixtures and furniture -->
+  <g fill="none" stroke="#28558c" stroke-width="1.5">
+    <rect x="220" y="185" width="120" height="85" rx="3"/>
+    <path d="M230 195H330V225H230ZM280 225V270"/>
+    <rect x="225" y="470" width="135" height="70" rx="4"/>
+    <path d="M225 520H360M250 540V555M335 540V555"/>
+    <rect x="610" y="190" width="115" height="90" rx="3"/>
+    <path d="M620 200H715V230H620ZM668 230V280"/>
+    <path d="M855 185H995V245H855Z M875 205H915V225H875Z M935 205H975V225H935Z"/>
+    <path d="M855 400H995V455H855Z M875 410H920V445H875Z M940 410H980V445H940Z"/>
+    <circle cx="640" cy="650" r="32"/><path d="M608 650H672M640 618V682"/>
+    <rect x="850" y="610" width="105" height="60" rx="3"/>
+    <path d="M860 620H945V645H860Z"/>
+  </g>
+
+  <!-- Dimension strings and north arrow -->
+  <g fill="none" stroke="#28558c" stroke-width="1">
+    <path d="M180 125V75M500 125V75M815 125V75M1030 125V75M180 85H1030" marker-start="url(#tick)" marker-end="url(#tick)"/>
+    <path d="M165 140H115M165 400H115M165 730H115M125 140V730" marker-start="url(#tick)" marker-end="url(#tick)"/>
+    <path d="M1070 140H1105M1070 730H1105M1095 140V730" marker-start="url(#tick)" marker-end="url(#tick)"/>
+    <path d="M1110 800V755M1098 775L1110 755L1122 775M1100 800H1120"/>
+  </g>
+  <g fill="#28558c" font-family="Arial, Helvetica, sans-serif" letter-spacing="1.2">
+    <g font-size="12">
+      <text x="275" y="310">LIVING</text>
+      <text x="270" y="610">DINING</text>
+      <text x="605" y="310">RESIDENTIAL</text>
+      <text x="865" y="310">RESIDENTIAL</text>
+      <text x="615" y="465">HALL</text>
+      <text x="875" y="490">SERVICE</text>
+      <text x="865" y="700">LOBBY</text>
+      <text x="1105" y="745">N</text>
+    </g>
+    <text x="180" y="805" font-size="16" font-weight="bold">01 / CONCEPTUAL FLOOR PLAN</text>
+    <text x="180" y="825" font-size="10">ILLUSTRATIVE SCHEMATIC / NOT TO SCALE</text>
+    <text x="815" y="825" font-size="11">ARCHITECTURAL STUDIES / A-01</text>
+  </g>
+</svg>
