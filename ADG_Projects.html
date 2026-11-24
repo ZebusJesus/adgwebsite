@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Selected structural engineering and seismic design projects by Atlas Design Group.">
   <title>Projects | Atlas Design Group</title>
+  <link rel="stylesheet" href="adg-website-assets/logo-animation.css">
   <style>
     :root { --navy:#172552; --navy-dark:#0b1330; --cream:#f4f1ea; --teal:#15bebc; --ink:#14204a; --muted:#697088; --max:1380px; }
     * { box-sizing:border-box; }
@@ -50,7 +51,9 @@
     .project-card h3 { margin:0 0 .4rem; font-size:1.05rem; line-height:1; letter-spacing:-.035em; }
     .project-card p { margin:0; color:var(--muted); font-size:.75rem; line-height:1.35; }
     .filters { display:flex; flex-wrap:wrap; gap:.5rem; margin-bottom:1.5rem; }
-    .filter-btn { min-height:2.4rem; padding:.55rem 1.1rem; border:1px solid var(--navy); border-radius:99px; color:var(--navy); background:transparent; font:700 .7rem Arial, Helvetica, sans-serif; letter-spacing:.04em; text-transform:uppercase; cursor:pointer; transition:background .2s, color .2s; }
+    .filter-btn { display:inline-flex; align-items:center; gap:.4rem; min-height:2.4rem; padding:.55rem 1.1rem; border:1px solid var(--navy); border-radius:99px; color:var(--navy); background:transparent; font:700 .7rem Arial, Helvetica, sans-serif; letter-spacing:.04em; text-transform:uppercase; cursor:pointer; transition:background .2s, color .2s; }
+    .filter-icon { width:1.5rem; height:1.5rem; flex:none; background:currentColor; -webkit-mask:var(--filter-icon) center / contain no-repeat; mask:var(--filter-icon) center / contain no-repeat; }
+    .filter-icon--all { -webkit-mask:none; mask:none; background:linear-gradient(currentColor 0 0) 10% 10% / 32% 32% no-repeat, linear-gradient(currentColor 0 0) 90% 10% / 32% 32% no-repeat, linear-gradient(currentColor 0 0) 10% 90% / 32% 32% no-repeat, linear-gradient(currentColor 0 0) 90% 90% / 32% 32% no-repeat; }
     .filter-btn:hover, .filter-btn:focus-visible { color:var(--teal); border-color:var(--teal); outline:none; }
     .filter-btn[aria-pressed="true"] { color:#fff; border-color:var(--navy); background:var(--navy); }
     .project-grid.is-filtered .project-card--featured { grid-column:auto; }
@@ -82,7 +85,7 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="nav-shell">
-      <a class="logo" href="./index.html#home" aria-label="Atlas Design Group home"><img src="./adg-website-assets/AtlasLogo.png" alt="Atlas Design Group"></a>
+      <a class="logo" href="./index.html#home" aria-label="Atlas Design Group home"><span class="logo-art"><img class="logo-original" src="./adg-website-assets/AtlasLogo.png" alt="Atlas Design Group"><img class="logo-globe" src="./adg-website-assets/logo-globe.svg" alt="" aria-hidden="true"></span></a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">Menu</button>
       <nav id="primary-navigation" class="nav-list" aria-label="Primary navigation">
         <a href="./ADG_Projects.html" aria-current="page">Projects</a><a href="./ADG_Expertise.html">Expertise</a><a href="./ADG_About.html">About</a><a href="./ADG_Team.html">Meet the team</a><a class="button button--outline" href="mailto:chris.padin@adg-inc.com">Start a project</a>
@@ -201,9 +204,15 @@
     };
     cards.forEach(card => { card.dataset.category = categoryOf(card.querySelector(".project-type").textContent); });
     const categories = ["All", ...["Housing", "Mixed-use", "Education", "Community", "Healthcare", "Adaptive reuse & seismic"].filter(c => cards.some(card => card.dataset.category === c))];
+    const filterIcons = { "Housing":"affordable.png", "Mixed-use":"multifam.png", "Education":"education.png", "Community":"community.png", "Healthcare":"healthcare.png", "Adaptive reuse & seismic":"seismic.png" };
     categories.forEach(name => {
       const btn = document.createElement("button");
-      btn.type = "button"; btn.className = "filter-btn"; btn.textContent = name; btn.dataset.filter = name;
+      const icon = document.createElement("span");
+      icon.className = "filter-icon"; icon.setAttribute("aria-hidden", "true");
+      if (name === "All") icon.classList.add("filter-icon--all");
+      else icon.style.setProperty("--filter-icon", `url("adg-website-assets/${filterIcons[name]}")`);
+      btn.type = "button"; btn.className = "filter-btn"; btn.dataset.filter = name;
+      btn.append(icon, document.createTextNode(name));
       btn.setAttribute("aria-pressed", name === "All");
       filterBar.appendChild(btn);
     });

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 837 604">
+  <style>
+    .meridian { transform-origin:416px 190px; animation:spin 12s linear infinite; }
+    .m2 { animation-delay:-1.5s; }
+    .m3 { animation-delay:-3s; }
+    .m4 { animation-delay:-4.5s; }
+    .m5 { animation-delay:-6s; }
+    .m6 { animation-delay:-7.5s; }
+    .m7 { animation-delay:-9s; }
+    .m8 { animation-delay:-10.5s; }
+    @keyframes spin { to { transform:rotateY(360deg); } }
+    @media (prefers-reduced-motion:reduce) { .meridian { animation:none; } }
+  </style>
+  <defs>
+    <clipPath id="grid">
+      <path d="M245 190C245 92 320 15 416 15S587 92 587 190L580 280H535V240L493 216 470 232V160L416 120 366 170V228L343 217 302 247V280H252Z"/>
+    </clipPath>
+    <clipPath id="sphere"><ellipse cx="416" cy="190" rx="171" ry="175"/></clipPath>
+  </defs>
+  <g clip-path="url(#grid)">
+    <g clip-path="url(#sphere)" fill="none" stroke="#262179" stroke-width="7">
+      <path d="M280 48Q416 105 552 48M258 70Q416 145 574 70M248 94Q416 184 584 94M244 135Q416 216 588 135M242 178Q416 247 590 178M246 220Q416 276 586 220M254 262Q416 305 578 262"/>
+      <ellipse class="meridian" cx="416" cy="190" rx="171" ry="175"/>
+      <ellipse class="meridian m2" cx="416" cy="190" rx="171" ry="175"/>
+      <ellipse class="meridian m3" cx="416" cy="190" rx="171" ry="175"/>
+      <ellipse class="meridian m4" cx="416" cy="190" rx="171" ry="175"/>
+      <ellipse class="meridian m5" cx="416" cy="190" rx="171" ry="175"/>
+      <ellipse class="meridian m6" cx="416" cy="190" rx="171" ry="175"/>
+      <ellipse class="meridian m7" cx="416" cy="190" rx="171" ry="175"/>
+      <ellipse class="meridian m8" cx="416" cy="190" rx="171" ry="175"/>
+    </g>
+  </g>
+</svg>

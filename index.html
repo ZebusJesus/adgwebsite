@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Atlas Design Group structural engineering and seismic design.">
   <title>Atlas Design Group | Structural + Seismic Design</title>
+  <link rel="stylesheet" href="adg-website-assets/logo-animation.css">
   <style>
     :root { --navy:#172552; --navy-dark:#0b1330; --cream:#f4f1ea; --teal:#15bebc; --ink:#14204a; --muted:#697088; --white:#fff; --line:#dfe1e7; --max:1380px; }
     * { box-sizing:border-box; }
@@ -17,7 +18,9 @@
     .site-header { position:absolute; z-index:10; top:0; left:0; width:100%; color:#fff; }
     .nav-shell { display:flex; align-items:center; justify-content:space-between; max-width:none; min-height:5.4rem; margin:0; padding:0 1.2rem; }
     .logo { display:flex; align-items:center; gap:.65rem; margin:.8rem 0 0 1rem; color:inherit; font-size:.8rem; font-weight:700; letter-spacing:.03em; text-decoration:none; text-transform:uppercase; }
-    .logo img { display:block; width:auto; height:4.5rem; padding:.2rem .5rem; border-radius:.4rem; background:#fff; object-fit:contain; }
+    .logo-art { padding:.2rem .5rem; border-radius:.4rem; background:#fff; }
+    .logo img { display:block; width:auto; height:4.1rem; object-fit:contain; }
+    .logo-art .logo-globe { inset:.2rem .5rem; width:calc(100% - 1rem); height:calc(100% - .4rem); }
     .nav-list { display:flex; align-items:center; gap:2rem; margin:0; padding:0; list-style:none; font-size:1rem; font-weight:700; }
     .nav-list a { color:inherit; text-decoration:none; }
     .nav-list .button { font-size:inherit; }
@@ -93,7 +96,7 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="nav-shell">
-      <a class="logo" href="#home" aria-label="Atlas Design Group home"><img src="adg-website-assets/AtlasLogo.png" alt="Atlas Design Group"></a>
+      <a class="logo" href="#home" aria-label="Atlas Design Group home"><span class="logo-art"><img class="logo-original" src="adg-website-assets/AtlasLogo.png" alt="Atlas Design Group"><img class="logo-globe" src="adg-website-assets/logo-globe.svg" alt="" aria-hidden="true"></span></a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">Menu</button>
       <nav id="primary-navigation" class="nav-list" aria-label="Primary navigation">
         <a href="ADG_Projects.html">Projects</a><a href="ADG_Expertise.html">Expertise</a><a href="ADG_About.html">About</a><a href="ADG_Team.html">Meet the team</a><a class="button button--outline" href="mailto:chris.padin@adg-inc.com">Start a project</a>
