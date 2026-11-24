@@ -25,6 +25,7 @@
     .eyebrow { margin:0 0 .8rem; color:var(--teal); font-size:.75rem; font-weight:700; letter-spacing:.07em; text-transform:uppercase; }
     h1,h2,h3,p { margin-top:0; } h1 { max-width:48rem; margin-bottom:1rem; font-size:clamp(3rem,6vw,6rem); line-height:.94; letter-spacing:-.06em; }
     .hero p:last-child { max-width:40rem; margin-bottom:0; color:#e0e5f4; font-size:1.05rem; line-height:1.5; }
+    .team-bg { background:linear-gradient(rgba(244,241,234,.78), rgba(244,241,234,.78)), url("adg-website-assets/blueprint-bg.svg") center/cover no-repeat; }
     .team { padding:clamp(3rem,6vw,6.5rem) 2rem; } .intro { display:flex; align-items:end; justify-content:space-between; gap:2rem; margin-bottom:3rem; }
     .intro h2 { max-width:33rem; margin:0; font-size:clamp(1.8rem,3.5vw,3.5rem); line-height:1; letter-spacing:-.05em; } .intro p { max-width:29rem; margin:0; color:var(--muted); font-size:.95rem; line-height:1.5; }
     .team-groups { display:grid; gap:3.8rem; } .team-group { padding-top:1.1rem; border-top:2px solid var(--navy); } .team-group-header { display:flex; align-items:baseline; justify-content:space-between; gap:1rem; margin-bottom:1.3rem; } .team-group-header h3 { margin:0; font-size:1.2rem; letter-spacing:.06em; text-transform:uppercase; } .team-group-header span { color:var(--teal); font-size:.72rem; font-weight:700; letter-spacing:.07em; text-transform:uppercase; }
@@ -45,6 +46,7 @@
   </div></header>
   <main>
     <section class="hero" aria-labelledby="team-page-title"><div class="hero-inner"><p class="eyebrow">Our firm</p><h1 id="team-page-title">The people behind the work.</h1><p>Atlas Design Group brings structural, seismic design, and construction expertise together with a shared commitment to the communities we serve.</p></div></section>
+    <div class="team-bg">
     <section id="team" class="team" aria-labelledby="team-title"><div class="intro"><div><p class="eyebrow">The Atlas team</p><h2 id="team-title">Principal-level attention at every level.</h2></div><p>Meet the engineers, designers, and operations staff who bring practical creativity and technical rigor to every project.</p></div>
       <div class="team-groups">
       <section class="team-group" aria-labelledby="leadership-title"><div class="team-group-header"><h3 id="leadership-title">Leadership + Operations</h3></div><div class="team-grid">
@@ -72,6 +74,7 @@
       </div></section>
       </div>
     </section>
+    </div>
     <section class="cta"><div class="cta-inner"><div><p class="eyebrow">Let's build something that matters</p><h2>Bring us your next challenge.</h2></div><a class="button" href="mailto:chris.padin@adg-inc.com">Start a project</a></div></section>
   </main>
   <footer><span>Atlas Design Group</span><span>Structural + Seismic Design</span><span>Seattle, Washington · adg-inc.com</span></footer>
