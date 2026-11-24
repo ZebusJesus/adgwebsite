@@ -26,7 +26,9 @@
     .button:hover, .button:focus-visible { color:#fff; background:var(--teal); outline:none; transform:translateY(-2px); }
     .button--outline { color:#fff; border-color:rgb(255 255 255 / 70%); background:transparent; }
     .button--dark { color:#fff; background:var(--navy); }
-    .menu-toggle { display:none; border:0; color:#fff; background:transparent; font-size:1.5rem; cursor:pointer; }
+    .menu-toggle { display:none; min-height:2.75rem; padding:.6rem 1.1rem; border:1px solid #fff; border-radius:99px; color:#fff; background:var(--navy); font-size:.95rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; cursor:pointer; }
+    .menu-toggle:hover { border-color:var(--teal); }
+    .menu-toggle:focus-visible { outline:2px solid var(--teal); outline-offset:3px; }
     .hero { position:relative; display:grid; min-height:32rem; place-items:end start; color:#fff; background:linear-gradient(90deg, rgb(8 17 48 / 72%), rgb(8 17 48 / 23%)), url("adg-website-assets/hero-lake-city.png") center / cover; }
     .hero-inner { width:min(var(--max), 100%); padding:7rem 2rem 3.5rem; margin:auto; }
     .eyebrow { margin:0 0 .8rem; color:var(--teal); font-size:.75rem; font-weight:700; letter-spacing:.07em; text-transform:uppercase; }
